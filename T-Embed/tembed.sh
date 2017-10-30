@@ -12,5 +12,3 @@ clear
 clear
 ./ssh.sh
 ./download.sh
-clear
-echo "Done"
