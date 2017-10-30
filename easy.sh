@@ -14,8 +14,10 @@ echo "2. Create Payload"
 echo "3. Launch msfconsole"
 echo "4. Exit"
 read -p ">|" o
+metapath="$HOME/metasploit-framework"
 if [ $o = "3" ]
 then
+cd $metapath
 ./msfconsole
 break
 elif [ $o = "1" ]
@@ -24,7 +26,6 @@ cd T-Embed
 ./tembed.sh
 elif [ $o = "2" ]
 then
-metapath="$HOME/metasploit-framework"
 cd $metapath
 echo "Enter HOST"
 read -p ">|" host1
