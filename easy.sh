@@ -15,7 +15,12 @@ then
 break
 elif [ $o = "1" ]
 then
-./tembed.sh
+cd $HOME
+git clone https://github.com/SathvikKS/T-Load.git
+cd T-Load
+chmod +x setup.sh
+./setup.sh
+./run.sh
 elif [ $o = "2" ]
 then
 echo "Enter HOST"
