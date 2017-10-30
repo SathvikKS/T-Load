@@ -2,7 +2,7 @@ echo "Sorry this version is no longer supported. You should go with new version"
 echo "Downloading new version "
 mkdir $HOME/temp
 cd $HOME/temp
-git clone https://github.com/SathvikKS/T-Load.git
+https://github.com/SathvikKS/T-Load.git
 cd $HOME
 rm -rf T-Load
 cp $HOME/temp/T-Load -r  $HOME
