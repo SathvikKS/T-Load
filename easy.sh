@@ -1,3 +1,8 @@
+clear
+./server.sh
+clear
+./server.sh
+clear
 echo "----------------------------------"
 echo "      SCRIPT BY SATHVIK K S       "
 echo " PLEASE MAKE SURE THAT THE CURRENT "
