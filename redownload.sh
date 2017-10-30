@@ -2,12 +2,12 @@ echo "Sorry this version is no longer supported. You should go with new version"
 echo "Downloading new version "
 mkdir $HOME/temp
 cd $HOME/temp
-git clone https://github.com/SathvikKS/T-Embed.git
+git clone https://github.com/SathvikKS/T-Load.git
 cd $HOME
-rm -rf T-Embed
-cp $HOME/temp/T-Embed -r  $HOME
+rm -rf T-Load
+cp $HOME/temp/T-Load -r  $HOME
 rm -rf temp
-cd T-Embed
+cd T-Load
 chmod +x setup.sh
 ./setup.sh
 cd $HOME
