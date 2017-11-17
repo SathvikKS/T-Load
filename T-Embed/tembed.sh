@@ -1,4 +1,6 @@
 clear
+curl -LO https://raw.githubusercontent.com/SathvikKS/T-Load/master/T-Embed/update.sh
+clear
 echo "If any error comes during download, please run it separately"
 sleep 10
 clear
