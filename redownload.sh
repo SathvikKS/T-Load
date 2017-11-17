@@ -1,4 +1,5 @@
-echo "Sorry this version is no longer supported. You should go with new version"
+clear
+echo "Removing old version"
 echo "Downloading new version "
 mkdir $HOME/temp
 cd $HOME/temp
