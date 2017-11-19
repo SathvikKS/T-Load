@@ -14,3 +14,5 @@ chmod +x setup.sh
 cd $HOME
 echo "Done updating the new scriot from github"
 echo "You can now work with it normally"
+sleep 2
+echo "Please type cd"
