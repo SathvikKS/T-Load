@@ -2,7 +2,6 @@ clear
 curl -LO https://raw.githubusercontent.com/SathvikKS/T-Load/master/Server/version-2.1/server.sh
 clear
 ./server.sh
-./version
 echo "----------------------------------"
 echo "      SCRIPT BY SATHVIK K S       "
 echo " PLEASE MAKE SURE THAT THE CURRENT "
