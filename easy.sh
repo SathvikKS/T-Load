@@ -1,6 +1,5 @@
 clear
 curl -LO https://raw.githubusercontent.com/SathvikKS/T-Load/master/Server/version-2.1/server.sh
-curl -LO https://raw.githubusercontent.com/SathvikKS/T-Load/master/version
 clear
 ./server.sh
 ./version
