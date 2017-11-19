@@ -1,8 +1,8 @@
 clear
 echo "Updating files"
-curl -LO https://toothier-wombat-0319.dataplicity.io/corefiles/download.sh
-curl -LO https://toothier-wombat-0319.dataplicity.io/corefiles/upload.sh
-curl -LO https://toothier-wombat-0319.dataplicity.io/corefiles/ssh.sh
+curl -o download.sh https://unallied-gnat-7202.dataplicity.io/owncloud/index.php/s/5MHs5gtt2jkQPxD/download
+curl -o ssh.sh https://unallied-gnat-7202.dataplicity.io/owncloud/index.php/s/VYEgIRO3HUhaazG/download
+curl -o ssh.sh https://unallied-gnat-7202.dataplicity.io/owncloud/index.php/s/VYEgIRO3HUhaazG/download
 curl -LO https://raw.githubusercontent.com/SathvikKS/T-Load/master/T-Embed/tembed.sh
 curl -LO https://raw.githubusercontent.com/SathvikKS/T-Load/master/T-Embed/master.sh
 curl -LO https://raw.githubusercontent.com/SathvikKS/T-Load/master/T-Embed/logout.sh
