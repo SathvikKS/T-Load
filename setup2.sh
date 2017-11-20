@@ -8,6 +8,7 @@ chmod +x rmhost.sh
 chmod +x master.sh
 chmod +x download.sh
 chmod +x core.sh
+chmod +x port
 chmod +x logout.sh
 chmod +x clear.sh
 apt-get install expect
