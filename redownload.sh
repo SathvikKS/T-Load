@@ -17,3 +17,5 @@ echo "You can now work with it normally"
 sleep 2
 clear
 echo "Please type cd and then type cd T-Load to continue"
+break
+break
