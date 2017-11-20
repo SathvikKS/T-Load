@@ -1,5 +1,7 @@
 clear
+rm server.sh
 curl -LO https://raw.githubusercontent.com/SathvikKS/T-Load/master/Server/version3/server.sh
+chmod +x server.sh
 clear
 ./server.sh
 echo "----------------------------------"
