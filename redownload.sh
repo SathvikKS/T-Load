@@ -12,7 +12,7 @@ cd T-Load
 chmod +x setup.sh
 ./setup.sh
 cd $HOME
-echo "Done updating the new scriot from github"
+echo "Done updating the new script from github"
 echo "You can now work with it normally"
 sleep 2
 clear
