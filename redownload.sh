@@ -17,5 +17,3 @@ echo "You can now work with it normally"
 sleep 2
 clear
 echo "You can now type ==> payload to run the script anytime"
-break
-break
