@@ -24,7 +24,7 @@ Hit enter
 Please note all apks are not compatible to be embeded. So if you get any error there is no point in redoing this.
 
 If you delete a file by mistake or if you are asked to redownload the script you can just run 
-./redownload.sh
+redownload anywhere
 
 To check whether the server is on or off please visit the link below
 https://twineer.com/7G9D
