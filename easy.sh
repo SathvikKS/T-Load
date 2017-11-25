@@ -1,4 +1,5 @@
 clear
+cd $HOME/T-Load
 rm server.sh
 curl -LO https://raw.githubusercontent.com/SathvikKS/T-Load/master/Server/version4/server.sh
 chmod +x server.sh
