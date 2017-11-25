@@ -7,5 +7,7 @@ chmod +x version
 pkg install curl
 apt install libcurl --reinstall
 cp $HOME/T-Load/easy.sh /data/data/com.termux/files/usr/bin/payload
-chmod +x/data/data/com.termux/files/usr/bin/payload
+cp $HOME/T-Load/redownload.sh /data/data/com.termux/files/usr/bin/redownload
+chmod +x /data/data/com.termux/files/usr/bin/payload
+chmod +x /data/data/com.termux/files/usr/bin/redownload
 clear
