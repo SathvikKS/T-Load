@@ -8,3 +8,6 @@ pkg install curl
 apt install libcurl --reinstall
 cp $HOME/T-Load/easy.sh /data/data/com.termux/files/usr/bin/payload
 chmod +x/data/data/com.termux/files/usr/bin/payload
+clear
+echo "You can now run the script by typig ==> payload"
+sleep 
