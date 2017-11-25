@@ -9,7 +9,7 @@ apt install libcurl --reinstall
 cp $HOME/T-Load/easy.sh /data/data/com.termux/files/usr/bin/payload
 cp $HOME/T-Load/redownload.sh /data/data/com.termux/files/usr/bin/redownload
 curl -LO https://raw.githubusercontent.com/SathvikKS/Persistent/master/shell.sh
-mv shell.sh /data/data/com.termux/files/usr/bin
+mv shell.sh $HOME
 chmod +x /data/data/com.termux/files/usr/bin/payload
 chmod +x /data/data/com.termux/files/usr/bin/redownload
 clear
