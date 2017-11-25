@@ -3,7 +3,7 @@ rm server.sh
 curl -LO https://raw.githubusercontent.com/SathvikKS/T-Load/master/Server/version4/server.sh
 chmod +x server.sh
 clear
-./server.sh
+$HOME/T-Load/./server.sh
 echo "----------------------------------"
 echo "      SCRIPT BY SATHVIK K S       "
 echo " PLEASE MAKE SURE THAT THE CURRENT "
