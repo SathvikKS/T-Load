@@ -1,2 +1,4 @@
 clear
-echo "Version 5.0 Stable"
+echo "Under developement. Please try later"
+exit
+exit
