@@ -1,10 +1,12 @@
-# T-Embed
+# T-Lmbed
 steps
-chmod +x setup.sh
+chmod +x tload
 
-then run it by ./setup.sh
+then run it by----> ./tload
 
-then start the process by ./easy.sh
+you must select option 0 and install the requirements
+
+then start the process by---> tload
 
 Please make sure that you have installed metasploit on termux. 
 Also note the path of the metsploit framework
@@ -13,7 +15,7 @@ If this is not your path, then you can edit  it by
 
 nano easy.sh
 
-In metapath="$HOME/metasploit-framework" replace $HOME/metasploit-framework with your metasploit install file path. Note that the inverted commas on either end is present
+All metasploit files should be present in $HOME/metasploit-framework
 
 Save the file by hitting ctrl and x
 
