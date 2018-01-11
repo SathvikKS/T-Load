@@ -1,4 +1,7 @@
 # T-Lmbed
+
+YouTube video tutorial
+https://nimbleinity.com/5I9C
 steps
 chmod +x tload
 
