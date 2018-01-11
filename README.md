@@ -1,4 +1,4 @@
-# T-Lmbed
+# T-Load
 
 YouTube video tutorial
 https://nimbleinity.com/5I9C
