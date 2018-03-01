@@ -1,5 +1,14 @@
 # T-Load
 
+Please note:
+If u get error during upload/embed/download, regarding the host, please try running the script again for few times for the update to take place
+
+
+
+
+
+
+
 YouTube video tutorial
 https://nimbleinity.com/5I9C
 steps
