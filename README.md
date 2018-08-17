@@ -7,7 +7,7 @@ Updates are all automatic unless a file has been broken, which rarely occurs unl
 #
 ## Follow these steps to install T-Load
 ### Step 1
-(If you have a Previous Version of T-load, Please do the following steps, else please skip to step 2)
+(If you have a Previous Version of T-load, Please do the following steps, else please skip to ### Step 2)  
 cd $HOME  
 rm -rf T-Load 
 #
