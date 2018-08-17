@@ -11,6 +11,10 @@ chmod +x *
 metapath="$HOME/metasploit-framework"
 cd $HOME/T-Load
 clear
+if [ ${1} = "embed" ]
+then 
+./embed
+fi
 echo "----------------------------------"
 echo "          Version = 6.9Beta       "
 echo "----------------------------------"
@@ -43,10 +47,10 @@ clear
 cd $metapath
 ./msfconsole
 tload
-elif [ $o = "2" || ${1} = "embed" ]
+elif [ $o = "2" ]
 then
 ./embed
-elif [ $o = "1" || ${1} = "create" ]
+elif [ $o = "1" ]
 then
 clear
 cd $metapath
@@ -105,7 +109,7 @@ echo "set lportused \"$lp\"" >> $HOME/.msf_default/port
 echo "Value stored"
 sleep 2
 tload
-elif [ $o = "9" || ${1} = "launch" ]
+elif [ $o = "9" ]
 then
 [[ -s $HOME/.msf_default/exploit ]]
 exp=$(echo $?)
