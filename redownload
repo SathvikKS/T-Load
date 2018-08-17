@@ -1,3 +1,19 @@
-z="
-";Oz='rsio';Gz='ld v';rz=' -r ';Fz='ng o';Mz='g ne';Wz='/tem';LBz='rk w';Dz=' "Re';qz='Load';YBz='term';JBz='n no';yz='ing ';Vz='HOME';tz='ME';ez='.com';kBz='tup';jz='d.gi';RBz='p 2';Lz='adin';DBz='pt f';Bz='r';aBz='iles';gBz='oad';TBz='d +x';Qz='mkdi';BBz='new ';Ez='movi';eBz='ad';CBz='scri';Zz='clon';lz='rm -';cBz='/bin';dz='thub';oz='cp $';Jz=' "Do';cz='//gi';PBz='lly"';Tz='temp';GBz='ub"';Pz='n "';jBz='./se';VBz='ta/d';xz='pdat';hz='KS/T';wz='ne u';hBz=' set';Uz='cd $';iBz='up';Iz='on"';Xz='p';ABz='the ';nz='d';az='e ht';XBz='com.';Nz='w ve';pz='p/T-';KBz='w wo';vz='emp';uz='rf t';QBz='slee';sz=' $HO';Rz='r $H';NBz='it n';OBz='orma';dBz='/tlo';Kz='wnlo';ZBz='ux/f';MBz='ith ';Cz='echo';Hz='ersi';UBz=' /da';HBz=' "Yo';IBz='u ca';mz='rf T';Az='clea';FBz='gith';iz='-Loa';WBz='ata/';kz='t';gz='hvik';bBz='/usr';fz='/Sat';fBz='/T-L';Yz='git ';EBz='rom ';Sz='OME/';bz='tps:';SBz='chmo';
-eval "$Az$Bz$z$Cz$Dz$Ez$Fz$Gz$Hz$Iz$z$Cz$Jz$Kz$Lz$Mz$Nz$Oz$Pz$z$Qz$Rz$Sz$Tz$z$Uz$Vz$Wz$Xz$z$Yz$Zz$az$bz$cz$dz$ez$fz$gz$hz$iz$jz$kz$z$Uz$Vz$z$lz$mz$iz$nz$z$oz$Vz$Wz$pz$qz$rz$sz$tz$z$lz$uz$vz$z$Uz$Vz$z$Cz$Jz$wz$xz$yz$ABz$BBz$CBz$DBz$EBz$FBz$GBz$z$Cz$HBz$IBz$JBz$KBz$LBz$MBz$NBz$OBz$PBz$z$QBz$RBz$z$Az$Bz$z$SBz$TBz$UBz$VBz$WBz$XBz$YBz$ZBz$aBz$bBz$cBz$dBz$eBz$z$Uz$Vz$fBz$gBz$z$SBz$TBz$hBz$iBz$z$jBz$kBz"
+clear
+echo "Removing old version"
+echo "Downloading new version "
+mkdir $HOME/temp
+cd $HOME/temp
+git clone https://github.com/SathvikKS/T-Load.git
+cd $HOME
+rm -rf T-Load
+cp $HOME/temp/T-Load -r  $HOME
+rm -rf temp
+cd $HOME
+echo "Done updating the new script from github"
+echo "You can now work with it normally"
+sleep 2
+clear
+chmod +x /data/data/com.termux/files/usr/bin/tload
+cd $HOME/T-Load
+chmod +x setup
+./setup
