@@ -29,6 +29,8 @@ fi
 cd $HOME/T-Load
 chmod +x $HOME/.msf_default/msfload
 chmod +x embed
+chmod +x updates
+chmod 600 key
 chmod +x tload
 chmod +x redownload
 touch $HOME/.msf_default/pay
