@@ -1,5 +1,9 @@
 source $HOME/T-Load/host
-git pull --all
+update=$(git fetch --all
+git reset --hard origin/master
+git pull)
+echo $update >> $HOME/T-Load/updatelog
+
 dir="$HOME/T-Load"
 cd $dir
 metapath="$HOME/metasploit-framework"
