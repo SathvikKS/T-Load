@@ -1,13 +1,9 @@
 source $HOME/T-Load/host
+git pull --all
 dir="$HOME/T-Load"
 cd $dir
-curl -LO https://raw.githubusercontent.com/SathvikKS/T-Load/master/host
-rm updates
-curl -LO https://raw.githubusercontent.com/SathvikKS/T-Load/master/updates
-./updates
 metapath="$HOME/metasploit-framework"
 cd $HOME/T-Load
-chmod +x tload
 clear
 echo "----------------------------------"
 echo "          Version = 6.9Beta       "
