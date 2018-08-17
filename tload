@@ -1,6 +1,7 @@
 source $HOME/T-Load/host
 dir="$HOME/T-Load"
 cd $dir
+clear
 echo "Updating Please Wait :)" 
 update=$(git fetch --all
 git reset --hard origin/master
