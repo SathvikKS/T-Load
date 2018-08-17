@@ -1,11 +1,11 @@
 source $HOME/T-Load/host
+dir="$HOME/T-Load"
+cd $dir
 update=$(git fetch --all
 git reset --hard origin/master
 git pull)
 echo $update >> $HOME/T-Load/updatelog
-chmod +x tload
-dir="$HOME/T-Load"
-cd $dir
+chmod +x *
 metapath="$HOME/metasploit-framework"
 cd $HOME/T-Load
 clear
