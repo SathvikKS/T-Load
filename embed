@@ -33,10 +33,10 @@ clear
 echo " Your last embed app was $oapp. It will be downloaded to $dpath as $fapp "
 echo "Is this correct? (y/n)"
 read -p ">|" co
-if [ $co = "y" || $co = "Y" ]
+if [ $co = "y" ] || [ $co = "Y" ]
 then
 rsync -r -v --progress -e "ssh -i $dir/key -o StrictHostKeyChecking=no" sathvik@$host:/home/sathvik/embed/$fapp $dpath
-elif [ $co = "n" || $co = "N" ]
+elif [ $co = "n" ] || [ $co = "N" ]
 then 
 echo "Enter the name that you choosed for final apk"
 read -p ">|" fn
