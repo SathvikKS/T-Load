@@ -38,3 +38,11 @@ You can launch tload anytime, anywhere by just typing ==># tload
 ### Telegram (Channel):- https://t.me/joinchat/AAAAAErrqlx0GYU45kRYIg
 ### Telegran (Group):- https://t.me/joinchat/ExtvVhFzKuxNwW9afAn7Ow
 ### Gmail :- ilovetoassist@gmail.com (Spams will be reported immediately)
+#
+#
+#
+## You can support me by donating money on Paytm by following these steps
+### Download my QR Code from https://drive.google.com/uc?authuser=0&id=1Bcy_s4ZYhTYLvEl1mvl4Gtl5wlVGrW2x&export=download
+### Click on pay from Paytm
+### Click on the image icon next to the scanner and select the downloaded code image.
+### Feel free to send any amount of donations.
