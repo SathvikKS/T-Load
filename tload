@@ -12,7 +12,7 @@ chmod +x *
 metapath="$HOME/metasploit-framework"
 cd $HOME/T-Load
 clear
-if [ ${1} == "embed" ]
+if [ "${1}" = "embed" ]
 then 
 ./embed
 fi
