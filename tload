@@ -16,7 +16,6 @@ if [ "${1}" = "embed" ]
 then 
 ./embed
 fi
-echo "Sorry for the error that you have experienced"
 echo "----------------------------------"
 echo "          Version = 7             "
 echo "----------------------------------"
