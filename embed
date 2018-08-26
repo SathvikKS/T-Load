@@ -2,6 +2,7 @@ source $HOME/T-Load/host
 source "$HOME/.msf_default/pay"
 dir=$HOME/T-Load
 clear
+echo "In Maintainance mode. Pleasr cooperate."
 echo "1) Upload original app"
 echo "2) Embed"
 echo "3) Download embed app"
