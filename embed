@@ -1,4 +1,4 @@
-source $HOME/T-Load/host
+ource $HOME/T-Load/host
 source "$HOME/.msf_default/pay"
 dir=$HOME/T-Load
 clear
