@@ -17,7 +17,7 @@ then
 ./embed
 fi
 echo "----------------------------------"
-echo "          Version = 7             "
+echo "          Version = 7 Unstable    "
 echo "----------------------------------"
 echo "      SCRIPT BY SATHVIK K S       "
 echo " PLEASE MAKE SURE THAT THE CURRENT "
