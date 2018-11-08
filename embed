@@ -18,7 +18,7 @@ echo " Enter the download path with the final name with .apk extension "
 read -p ">|" dpath
 echo "dpath=$dpath" >> $HOME/.msf_default/pay
 echo "fapp=$(echo "$dpath" | rev | cut -d"/" -f1 | rev)" >> $HOME/.msf_default/pay
-rrsync -r -v --progress -e "ssh -i $dir/key -o StrictHostKeyChecking=no" $upath sathvik@$host:/home/sathvik/payload
+rsync -r -v --progress -e "ssh -i $dir/key -o StrictHostKeyChecking=no" $upath sathvik@$host:/home/sathvik/payload
 sleep 3
 $dir/embed
 elif [ $embc = "2" ]
@@ -39,7 +39,7 @@ echo "Is this correct? (y/n)"
 read -p ">|" co
 if [ $co = "y" ] || [ $co = "Y" ]
 then
-rrsync -r -v --progress -e "ssh -i $dir/key -o StrictHostKeyChecking=no" sathvik@$host:/home/sathvik/embed/$fapp $dpath
+rsync -r -v --progress -e "ssh -i $dir/key -o StrictHostKeyChecking=no" sathvik@$host:/home/sathvik/embed/$fapp $dpath
 elif [ $co = "n" ] || [ $co = "N" ]
 then 
 clear
