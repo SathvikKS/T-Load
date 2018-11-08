@@ -5,6 +5,7 @@ cd $dir
 clear
 #### UPdater
 clear
+git checkout origin/master *
 cd $HOME/T-Load
 echo "Searching for updates. Please wait :)"
 touch $HOME/.msf_default/updates
