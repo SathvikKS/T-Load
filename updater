@@ -1,0 +1,24 @@
+clear
+cd $HOME/T-Load
+echo "Searching for updates. Please wait :)"
+touch $HOME/.msf_default/updates
+rm $HOME/.msf_default/updates
+git fetch --dry-run 2>&1 > /dev/null| tee $HOME/.msf_default/updates
+#tee -a git fetch --dry-run $HOME/.msf_default/updates /dev/null
+up=$HOME/.msf_default/updates
+if grep -q origin/master "$up"; then
+clear
+echo "Updates are found. Now updating"
+sleep 1
+update=$(git fetch --all
+git reset --hard origin/master
+git pull)
+echo $update >> $HOME/T-Load/updatelog
+clear
+echo "Update done. Please reopen"
+sleep 1
+exit
+else
+echo "No updates"
+fi
+sleep 1
