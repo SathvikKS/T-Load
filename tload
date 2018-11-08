@@ -28,6 +28,7 @@ exit
 else
 chmod +x *
 echo "No updates"
+sleep 2
 fi
 ########Updater end
 metapath="$HOME/metasploit-framework"
