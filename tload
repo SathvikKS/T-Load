@@ -19,7 +19,6 @@ sleep 1
 update=$(git fetch --all
 git reset --hard origin/master
 git pull)
-echo $update >> $HOME/T-Load/updatelog
 clear
 chmod +x *
 echo "Update done. Please reopen"
