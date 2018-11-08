@@ -6,7 +6,7 @@ clear
 #### UPdater
 clear
 touch updat
-rm update*
+rm updat*
 git checkout origin/master *
 cd $HOME/T-Load
 echo "Searching for updates. Please wait :)"
