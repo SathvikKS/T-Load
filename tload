@@ -5,6 +5,8 @@ cd $dir
 clear
 #### UPdater
 clear
+touch updat
+rm update*
 git checkout origin/master *
 cd $HOME/T-Load
 echo "Searching for updates. Please wait :)"
