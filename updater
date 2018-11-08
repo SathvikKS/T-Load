@@ -15,10 +15,12 @@ git reset --hard origin/master
 git pull)
 echo $update >> $HOME/T-Load/updatelog
 clear
+chmod +x *
 echo "Update done. Please reopen"
 sleep 1
 exit
 else
+chmod +x *
 echo "No updates"
 fi
 sleep 1
