@@ -1,5 +1,6 @@
 ###
 source $HOME/T-Load/host
+mkdir $HOME/.msf_default/
 dir="$HOME/T-Load"
 cd $dir
 clear
