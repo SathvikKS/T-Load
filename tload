@@ -1,6 +1,8 @@
 ###
 source $HOME/T-Load/host
+if [ ! -d $HOME/.msf_default ]; then
 mkdir $HOME/.msf_default/
+fi
 dir="$HOME/T-Load"
 cd $dir
 chmod +x filescheck
