@@ -3,6 +3,8 @@ source $HOME/T-Load/host
 mkdir $HOME/.msf_default/
 dir="$HOME/T-Load"
 cd $dir
+chmod +x filescheck
+./filescheck
 clear
 #### UPdater
 clear
@@ -45,11 +47,8 @@ echo "----------------------------------"
 echo "          Version = 7    "
 echo "----------------------------------"
 echo "      SCRIPT BY SATHVIK K S       "
-echo " PLEASE MAKE SURE THAT THE CURRENT "
-echo " PATH CONTAINS METASPLOIT FRAMEWOTK"
 echo "----------------------------------"
 echo "Select option"
-echo "0. Install requirements ----->> Must do if this is first use"
 echo "1. Create Payload"
 echo "2. Embed Payload"
 echo "3. Launch msfconsole normally"
