@@ -7,7 +7,7 @@ then
  clear
  echo "Setting up things for you. Please wait."
  sleep 2
- $HOME/T-Load/setup
+ $HOME/T-Load/.setup
 }
 else 
 {
@@ -20,7 +20,7 @@ else
   clear
   echo "Setting up things for you. Please wait."
   sleep 2
-  $HOME/T-Load/setup
+  $HOME/T-Load/.setup
  }
  fi
 }
