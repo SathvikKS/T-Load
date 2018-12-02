@@ -1,0 +1,27 @@
+
+if [ ! -d $HOME/.msf_default ];
+then
+{
+ echo " Welcome to T-Load. This must be your first use or the required files must have been deleted. So please wait untill all the required files have been setup. "
+ sleep 4
+ clear
+ echo "Setting up things for you. Please wait."
+ sleep 2
+ $HOME/T-Load/setup
+}
+else 
+{
+ no=$(ls $HOME/.msf_default | wc -l)
+ if [ "$no" != "7" ];
+ then
+ {
+  echo " Welcome to T-Load. This must be your first use or the required files must have been deleted. So please wait untill all the required files have been set"
+  sleep 4
+  clear
+  echo "Setting up things for you. Please wait."
+  sleep 2
+  $HOME/T-Load/setup
+ }
+ fi
+}
+fi
