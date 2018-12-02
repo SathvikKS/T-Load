@@ -1,5 +1,5 @@
 # T-Load
-T-Load is back and better. The embedding option is now migrated to an new project. Please visit it at https://github.com/SathvikKS/OnlinePayloadBinder   
+T-Load is back and better.   
 The best part is that things are now automatic. A kind of automatic intelligence is added to the script to make it run like a breeze.  
 Updates are all automatic unless a file has been broken, which rarely occurs unless done on a purpose.  
 #### Please note that an active internet connection is must to embed the apps  with this script
