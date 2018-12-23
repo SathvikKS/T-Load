@@ -51,7 +51,7 @@ then
 ./embed
 fi
 echo "----------------------------------"
-echo "          Version = 7    "
+echo "         Version = 7.0.1    "
 echo "----------------------------------"
 echo "      SCRIPT BY SATHVIK K S       "
 echo "----------------------------------"
