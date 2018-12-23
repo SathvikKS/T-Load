@@ -1,14 +1,17 @@
 #
 trap '' INT TSTP
 source $HOME/T-Load/host
-if [ ! -d $HOME/.msf_default ]; then
-mkdir $HOME/.msf_default/
-fi
 dir="$HOME/T-Load"
 cd $dir
 chmod +x filescheck
 ./filescheck
 clear
+chmod +x .setupcheck
+sc=$(./.setupcheck openssh)
+if [ "$sc" == "0" ]; then
+echo "Requirements have not been installed. Please wait while they are being installed. "
+./.setup
+fi
 #### UPdater
 clear
 touch updat
