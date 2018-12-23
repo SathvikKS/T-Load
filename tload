@@ -33,9 +33,9 @@ git reset --hard origin/master
 git pull)
 clear
 chmod +x *
-echo "Update done. Please reopen"
+echo "Update done. Restarting"
 sleep 1
-exit
+tload
 else
 chmod +x *
 echo "No updates"
