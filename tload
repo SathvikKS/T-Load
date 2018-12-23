@@ -34,8 +34,9 @@ git pull)
 clear
 chmod +x *
 echo "Update done. Restarting"
-sleep 1
-tload
+sleep 2
+reload=$(readlink -f "$0")
+exec "$reload"
 else
 chmod +x *
 echo "No updates"
