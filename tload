@@ -22,7 +22,6 @@ echo "Searching for updates. Please wait :)"
 touch $HOME/.msf_default/updates
 rm $HOME/.msf_default/updates
 git fetch --dry-run 2>&1 > /dev/null| tee $HOME/.msf_default/updates
-#tee -a git fetch --dry-run $HOME/.msf_default/updates /dev/null
 up=$HOME/.msf_default/updates
 if grep -q origin/master "$up"; then
 clear
