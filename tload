@@ -60,7 +60,7 @@ chmod +x /data/data/com.termux/files/usr/bin/tload
 #End Setup
 fi
 no=$(ls $HOME/.msf_default | wc -l)
-if [ ! -d $HOME/.msf_default ] || if [ "$no" != "7" ];
+if [ ! -d $HOME/.msf_default ] || [ "$no" != "7" ];
 then
 {
  echo " Welcome to T-Load. This must be your first use or the required files must have been deleted. So please wait untill all the required files have been setup. "
