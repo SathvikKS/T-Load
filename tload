@@ -3,6 +3,7 @@ trap '' INT TSTP
 source $HOME/T-Load/host
 dir="$HOME/T-Load"
 cd $dir
+### Auto Setup
 chmod +x filescheck
 ./filescheck
 clear
@@ -16,6 +17,7 @@ if [ "$OS" == "0" ] || [ "$SP" == "0" ] || [ "$CU" == "0" ] || [ "$RS" == "0" ] 
 echo "Requirements have not been installed. Please wait while they are being installed. "
 ./.setup
 fi
+## End Auto Setup
 #### UPdater
 clear
 touch updat
