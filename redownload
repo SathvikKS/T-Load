@@ -15,5 +15,4 @@ sleep 2
 clear
 chmod +x /data/data/com.termux/files/usr/bin/tload
 cd $HOME/T-Load
-chmod +x setup
-./setup
+tload
