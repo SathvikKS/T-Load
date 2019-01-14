@@ -5,6 +5,7 @@ clear
 echo "1) Upload original app"
 echo "2) Embed"
 echo "3) Download embed app"
+echo "4) Exit to Main Menu"
 read -p ">|" embc
 clear
 if [ $embc = "1" ]
@@ -66,6 +67,8 @@ echo
 echo
 echo "If there was no error seen while downloading, then you app has been downloaded to "$dpath " with a name "$dname
 sleep 5
+tload
+elif [ $embc = "4" ]; then
 tload
 else
 clear
