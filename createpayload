@@ -1,3 +1,5 @@
+trap '' INT TSTP
+metapath="$HOME/metasploit-framework"
 clear
 cd $metapath
 echo "Enter HOST"
