@@ -7,8 +7,12 @@ chmod +x filescheck
 ./filescheck
 clear
 chmod +x .setupcheck
-sc=$(./.setupcheck openssh)
-if [ "$sc" == "0" ]; then
+OS=$(./.setupcheck openssh)
+SP=$(./.setupcheck sshpass)
+CU=$(./.setupcheck curl)
+RS=$(./.setupcheck rsync)
+EX=$(./.setupcheck expect)
+if [ "$OS" == "0" ] || [ "$SP" == "0" ] || [ "$CU" == "0" ] || [ "$RS" == "0" ] || [ "$EX" == "0" ]; then
 echo "Requirements have not been installed. Please wait while they are being installed. "
 ./.setup
 fi
