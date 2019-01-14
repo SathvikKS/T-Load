@@ -149,7 +149,6 @@ echo "No updates"
 sleep 2
 fi
 ########Updater end
-metapath="$HOME/metasploit-framework"
 cd $HOME/T-Load
 clear
 if [ "${1}" = "embed" ]
