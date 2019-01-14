@@ -4,7 +4,8 @@ dir="$HOME/T-Load"
 cd $dir
 ### Auto Setup
 clear
-chmod +x .setupcheck
+chmod +x *
+chmod 600 key
 OS=$(./.setupcheck openssh)
 SP=$(./.setupcheck sshpass)
 CU=$(./.setupcheck curl)
@@ -136,12 +137,14 @@ git reset --hard origin/master
 git pull)
 clear
 chmod +x *
+chmod 600 key
 echo "Update done. Restarting"
 sleep 2
 reload=$(readlink -f "$0")
 exec "$reload"
 else
 chmod +x *
+chmod 600 key
 echo "No updates"
 sleep 2
 fi
