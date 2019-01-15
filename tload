@@ -2,6 +2,16 @@ trap '' INT TSTP
 source $HOME/T-Load/host
 dir="$HOME/T-Load"
 cd $dir
+##Colors
+cn='\e[1;36m'
+gr='\e[1;32m'
+rd='\e[1;31m'
+yl='\e[1;33m'
+bl='\e[1;34m'
+pp='\e[1;35m'
+rt='\e[0m'
+bbl='\e[44m'
+##End Colors
 ### Auto Setup
 clear
 chmod +x *
