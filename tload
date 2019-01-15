@@ -158,11 +158,11 @@ if [ "${1}" = "embed" ]
 then 
 ./embed
 fi
-echo "----------------------------------"
-echo "         Version = 7.0.1    "
-echo "----------------------------------"
-echo "      SCRIPT BY SATHVIK K S       "
-echo "----------------------------------"
+echo -e "$rd $bcn ----------------------------------"
+echo -e "$gr $bgy         Version = 7.0.1    "
+echo -e "$rd $bcn ----------------------------------"
+echo -e "$bl $bgy      SCRIPT BY SATHVIK K S       "
+echo -e "$rd $bcn ----------------------------------"
 echo "Select option"
 echo "1. Create Payload"
 echo "2. Embed Payload"
