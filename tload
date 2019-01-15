@@ -1,5 +1,6 @@
 trap '' INT TSTP
 source $HOME/T-Load/host
+source $HOME/T-Load/.clr
 dir="$HOME/T-Load"
 cd $dir
 ### Auto Setup
