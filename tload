@@ -175,8 +175,8 @@ echo "7. Set default metasploit lhost  to be used"
 echo "8. Set default metasploit lport to be used"
 echo "9. Launch msfconsole with default values"
 echo "10. Redownload"
-echo -e "$rt"
-read -e -p "$bbl>|$rt" o
+echo -e "$rt $bbl "
+read -p ">|" o echo -e "$rt"
 if [ $o = "0" ]
 then
 ./setup
