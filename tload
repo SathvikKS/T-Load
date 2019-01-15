@@ -165,7 +165,7 @@ fi
 echo -e "$rd $bcn----------------------------------$rt"
 echo -e "$rd $bd $ul $bgy        Version = 7.0.1   $rt "
 echo -e "$rd $bcn----------------------------------$rt"
-echo -e "$bl $bgy     SCRIPT BY SATHVIK K S      $rt "
+echo -e "$bl $bgy     SCRIPT BY SATHVIK K S        $rt "
 echo -e "$rd $bcn----------------------------------$rt"
 echo -e "$bwt $bk Select option $rt $rd $bwt"
 echo "1. Create Payload"
