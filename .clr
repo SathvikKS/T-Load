@@ -1,4 +1,6 @@
 ##Colors
+ul='\e[4m'
+bd='\e[1m'
 cn='\e[1;36m'
 wt='\e[39m'
 bk='\e[30m'
