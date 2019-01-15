@@ -9,5 +9,6 @@ rt='\e[0m'
 bbl='\e[44m'
 bgy='\e[47m'
 bgr='\e[102m'
-bcn="\e[106m"
+bcn='\e[106m'
+bwt='\e[107m'
 ##End Colors
