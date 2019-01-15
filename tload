@@ -150,6 +150,9 @@ sleep 2
 fi
 ########Updater end
 cd $HOME/T-Load
+#
+#
+## Begin T-Load
 clear
 if [ "${1}" = "embed" ]
 then 
@@ -260,3 +263,4 @@ echo "Wrong choice. Please try again"
 sleep 3
 tload
 fi
+# End T-Load
