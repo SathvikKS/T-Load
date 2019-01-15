@@ -1,13 +1,13 @@
 clear
 echo "Removing old version"
 echo "Downloading new version "
-mkdir $HOME/temp
-cd $HOME/temp
+mkdir $HOME/temptload
+cd $HOME/temptload
 git clone https://github.com/SathvikKS/T-Load.git
 cd $HOME
 rm -rf T-Load
-cp $HOME/temp/T-Load -r  $HOME
-rm -rf temp
+cp $HOME/temptload/T-Load -r  $HOME
+rm -rf temptload
 cd $HOME
 echo "Done updating the new script from github"
 echo "You can now work with it normally"
