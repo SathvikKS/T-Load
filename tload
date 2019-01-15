@@ -159,11 +159,11 @@ if [ "${1}" = "embed" ]
 then 
 ./embed
 fi
-echo -e "$rd $bcn ----------------------------------$rt"
-echo -e "$rd $bgy         Version = 7.0.1   $rt "
-echo -e "$rd $bcn ----------------------------------$rt"
-echo -e "$bl $bgy      SCRIPT BY SATHVIK K S      $rt "
-echo -e "$rd $bcn ----------------------------------$rt"
+echo -e "$rd $bcn----------------------------------$rt"
+echo -e "$rd $bgy        Version = 7.0.1   $rt "
+echo -e "$rd $bcn----------------------------------$rt"
+echo -e "$bl $bgy     SCRIPT BY SATHVIK K S      $rt "
+echo -e "$rd $bcn----------------------------------$rt"
 echo -e "$bwt $bk Select option $rt $rd $bwt"
 echo "1. Create Payload"
 echo "2. Embed Payload"
@@ -176,7 +176,7 @@ echo "8. Set default metasploit lport to be used"
 echo "9. Launch msfconsole with default values"
 echo "10. Redownload"
 echo -e "$rt"
-read -p ">|" o
+read -p "$bbl>|$rt" o
 if [ $o = "0" ]
 then
 ./setup
