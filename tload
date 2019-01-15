@@ -6,6 +6,7 @@ cd $dir
 ### Auto Setup
 clear
 chmod +x *
+chmod +x .*
 chmod 600 key
 OS=$(./.setupcheck openssh)
 SP=$(./.setupcheck sshpass)
@@ -138,6 +139,7 @@ git reset --hard origin/master
 git pull)
 clear
 chmod +x *
+chmod +x .*
 chmod 600 key
 echo -e "$bwt $rd Update done. $bl Restarting$rt"
 sleep 2
@@ -145,6 +147,7 @@ reload=$(readlink -f "$0")
 exec "$reload"
 else
 chmod +x *
+chmod +x .*
 chmod 600 key
 echo -e "$rd $bwt No updates $rt"
 sleep 2
