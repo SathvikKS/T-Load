@@ -159,13 +159,13 @@ if [ "${1}" = "embed" ]
 then 
 ./embed
 fi
-echo -e "$rd $bcn ----------------------------------"
-echo -e "$rd $bgy         Version = 7.0.1    "
-echo -e "$rd $bcn ----------------------------------"
-echo -e "$bl $bgy      SCRIPT BY SATHVIK K S       "
 echo -e "$rd $bcn ----------------------------------$rt"
-echo -e "$ylSelect option$rt"
-echo -e "$cn"
+echo -e "$rd $bgy         Version = 7.0.1   $rt "
+echo -e "$rd $bcn ----------------------------------$rt"
+echo -e "$bl $bgy      SCRIPT BY SATHVIK K S      $rt "
+echo -e "$rd $bcn ----------------------------------$rt"
+echo -e "$yl Select option $rt"
+echo -e "$yl $bwt"
 echo "1. Create Payload"
 echo "2. Embed Payload"
 echo "3. Launch msfconsole normally"
