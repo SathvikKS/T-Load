@@ -131,7 +131,7 @@ git fetch --dry-run 2>&1 > /dev/null| tee $HOME/.msf_default/updates
 up=$HOME/.msf_default/updates
 if grep -q origin/master "$up"; then
 clear
-echo "$bl $bwt Updates are found. Now updating$rt"
+echo -e "$bl $bwt Updates are found. Now updating$rt"
 sleep 1
 update=$(git fetch --all
 git reset --hard origin/master
