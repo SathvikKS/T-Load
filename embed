@@ -29,7 +29,7 @@ echo "Enter the host"
 read -p ">|" vh
 echo "Enter the port"
 read -p ">|" vp
-ssh -i $dir/key sathvik@$host -t "bind.sh $vh $vp $oapp $fapp"
+ssh -i $dir/key sathvik@$host -t "sudo bind.sh $vh $vp $oapp $fapp"
 sleep 3
 $dir/embed
 elif [ $embc = "3" ]
