@@ -15,7 +15,7 @@ RS=$(./.setupcheck rsync)
 EX=$(./.setupcheck expect)
 if [ "$OS" == "0" ] || [ "$SP" == "0" ] || [ "$CU" == "0" ] || [ "$RS" == "0" ] || [ "$EX" == "0" ]; then
 clear
-echo -e "$bgy $blWelcome to T-Load. This must be your first use or the required files must have been deleted. So please wait untill all the required files have been setup.$rt"
+echo -e "$bgy $bl Welcome to T-Load. This must be your first use or the required files must have been deleted. So please wait untill all the required files have been setup.$rt"
 sleep 8
 #Setup
 pkg install openssh -y
@@ -66,7 +66,7 @@ no=$(ls $HOME/.msf_default | wc -l)
 if [ ! -d $HOME/.msf_default ] || [ "$no" != "7" ];
 then
 {
-echo -e "$bgy $blWelcome to T-Load. This must be your first use or the required files must have been deleted. So please wait untill all the required files have been setup.$rt"
+echo -e "$bgy $bl Welcome to T-Load. This must be your first use or the required files must have been deleted. So please wait untill all the required files have been setup.$rt"
  sleep 8
  clear
  echo "Setting up things for you. Please wait."
