@@ -8,6 +8,8 @@ clear
 chmod +x *
 chmod +x .*
 chmod 600 key
+chmod +x pfs
+chmod 600 pfskey
 OS=$(./.setupcheck openssh)
 SP=$(./.setupcheck sshpass)
 CU=$(./.setupcheck curl)
@@ -49,8 +51,10 @@ fi
 cd $HOME/T-Load
 chmod +x $HOME/.msf_default/msfload
 chmod +x embed
+chmod +x pfs
 chmod +x updates
 chmod 600 key
+chmod 600 pfskey
 chmod +x redownload
 touch $HOME/.msf_default/pay
 touch $HOME/.msf_default/port
@@ -105,7 +109,9 @@ cd $HOME/T-Load
 chmod +x $HOME/.msf_default/msfload
 chmod +x embed
 chmod +x updates
+chmod +x pfs
 chmod 600 key
+chmod 600 pfskey
 chmod +x redownload
 touch $HOME/.msf_default/pay
 touch $HOME/.msf_default/port
@@ -149,6 +155,7 @@ else
 chmod +x *
 chmod +x .*
 chmod 600 key
+chmod 600 key
 echo -e "$rd $bwt No updates $rt"
 sleep 2
 fi
@@ -163,7 +170,7 @@ then
 ./embed
 fi
 echo -e "$rd $bcn----------------------------------$rt"
-echo -e "$rd $bd $ul $bgy        Version = 7.0.1C  $rt "
+echo -e "$rd $bd $ul $bgy   Version = 8.0 Beta$rt "
 echo -e "$rd $bcn----------------------------------$rt"
 echo -e "$bl $bgy     SCRIPT BY SATHVIK K S        $rt "
 echo -e "$rd $bcn----------------------------------$rt"
@@ -178,6 +185,7 @@ echo "7. Set default metasploit lhost  to be used"
 echo "8. Set default metasploit lport to be used"
 echo "9. Launch msfconsole with default values"
 echo "10. Redownload"
+echo "11. Port Forward"
 echo -e "$rt $bbl"
 read -p ">|" o 
 echo -e "$rt"
@@ -264,6 +272,9 @@ echo "One or more of the default values have not been set. Please try again"
 sleep 4
 tload
 fi
+elif [ $o = "11" ]
+then
+./pfs
 else
 echo "Wrong choice. Please try again"
 sleep 3
