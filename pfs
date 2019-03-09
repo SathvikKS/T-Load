@@ -1,16 +1,26 @@
-source "$home/T-Load/host"
+source "$HOME/T-Load/host"
 source "$HOME/.msf_default/psf"
-if [ -z "$c" ]
-then
+setdefault () {
 echo "Enter Your Code as seen in website"
 read -p ">|" ic
 echo "Enter Your UserID"
 read -p ">|" iud
 echo "c=\"$ic\"" >> $HOME/.msf_default/psf
 echo "ud=\"$iud\"" >> $HOME/.msf_default/psf
+}
+if [ -z "$c" ] || [ -z "$ud" ]
+then
+setdefault
 fi
+echo "Your default code is $c and userid is $ud. Continue with the same or edit it? (Y/N)"
+read -p ">|" ct
+if [ $ct = "Y" ] || [ $ct = "y" ]
+then
 echo "Enter the localport to be forwarded"
 read -p ">|" lp
 echo "Enter the remoteport as seen in the website"
 read -p ">|" rp
-ssh -L $lp:localhost:$p pfs@$host -i /home/T-Load/pfskey -t "sudo pfs.sh $ud $c"
+ssh -L $lp:localhost:$rp pfs@$host -i /home/T-Load/pfskey -t "sudo pfs.sh $ud $c"
+else 
+setdefault
+fi
