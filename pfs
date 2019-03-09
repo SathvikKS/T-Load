@@ -13,7 +13,7 @@ echo "Enter the localport to be forwarded"
 read -p ">|" lp
 echo "Enter the remoteport as seen in the website"
 read -p ">|" rp
-ssh -L $lp:localhost:$rp pfs@$host -i $HOME/T-Load/pfskey -t "sudo pfs.sh $ud $c $rp "
+ssh -L $lp:localhost:$rp pfs@$host -i $HOME/T-Load/pfskey -t " d=\"$c\" && sudo pfs.sh $ud $d $rp "
 }
 if [ -z "$c" ] || [ -z "$ud" ]
 then
