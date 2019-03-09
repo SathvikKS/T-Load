@@ -66,8 +66,8 @@ touch $HOME/.msf_default/exploit
 ln -s $HOME/T-Load/tload /data/data/com.termux/files/usr/bin/tload
 chmod +x /data/data/com.termux/files/usr/bin/tload
 #End Setup
-}
 fi
+}
 no=$(ls $HOME/.msf_default | wc -l)
 if [ ! -d $HOME/.msf_default ] || [ "$no" != "7" ];
 then
