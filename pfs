@@ -23,4 +23,5 @@ read -p ">|" rp
 ssh -L $lp:localhost:$rp pfs@$host -i /home/T-Load/pfskey -t "sudo pfs.sh $ud $c"
 else 
 setdefault
+continue
 fi
