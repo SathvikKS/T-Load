@@ -2,9 +2,13 @@ trap '' INT TSTP
 source $HOME/T-Load/host
 source $HOME/T-Load/.clr
 dir="$HOME/T-Load"
+mdir="$HOME/.msf_default"
 cd $dir
 ### Auto Setup
 clear
+if [ ! -d "$mdir" ]; then
+mkfir $mdir
+fi
 chmod +x *
 chmod +x .*
 chmod 600 key
