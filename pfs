@@ -14,14 +14,14 @@ echo "ud=$(echo \"$iud\")" >> $HOME/.msf_default/psf
 proceed () {
 echo "Enter the localport to be forwarded"
 read -p ">|" lp
-ssh -q -L $lp:localhost:$rrport pfs@$host -i $HOME/T-Load/pfskey -t " d=\"$c\" && echo $d && sudo pfs.sh $ud $d $rrport "
+ssh -q -L $lp:localhost:$rport pfs@$host -i $HOME/T-Load/pfskey -t " d=\"$c\" && echo $d && sudo pfs.sh $ud $d $rport "
 }
-if [ -z "$c" ] || [ -z "$ud" ] || [ -z "$rrport" ]
+if [ -z "$c" ] || [ -z "$ud" ] || [ -z "$rport" ]
 then
 setdefault
 proceed
 fi
-echo "Your default Code is $c , UserID is $ud and the Remote port is $rrport. Continue (Y) with the same or edit it (E) ?"
+echo "Your default Code is $c , UserID is $ud and the Remote port is $rport. Continue (Y) with the same or edit it (E) ?"
 read -p ">|" ct
 if [ $ct = "Y" ] || [ $ct = "y" ]
 then
