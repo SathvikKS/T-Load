@@ -6,14 +6,14 @@ read -p ">|" ic
 echo "Enter Your UserID"
 read -p ">|" iud
 echo "c=\"$ic\"" >> $HOME/.msf_default/psf
-echo "ud=\"$iud\"" >> $HOME/.msf_default/psf
+echo "ud=$(echo \"$iud\")" >> $HOME/.msf_default/psf
 }
 proceed () {
 echo "Enter the localport to be forwarded"
 read -p ">|" lp
 echo "Enter the remoteport as seen in the website"
 read -p ">|" rp
-ssh -L $lp:localhost:$rp pfs@$host -i $HOME/T-Load/pfskey -t "sudo pfs.sh $ud $cc $rp "
+ssh -L $lp:localhost:$rp pfs@$host -i $HOME/T-Load/pfskey -t "sudo pfs.sh $ud $c $rp "
 }
 if [ -z "$c" ] || [ -z "$ud" ]
 then
