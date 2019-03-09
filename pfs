@@ -14,7 +14,7 @@ echo "ud=$(echo \"$iud\")" >> $HOME/.msf_default/psf
 proceed () {
 echo "Enter the localport to be forwarded"
 read -p ">|" lp
-ssh -q -L $lp:localhost:$rport pfs@$host -i $HOME/T-Load/pfskey -t " d=\"$c\" && echo $d && sudo pfs.sh $ud $d $rport "
+ssh -q -L $lp:localhost:$rport pfs@$host -i $HOME/T-Load/pfskey -t " d="$(echo $c)" && echo $d && sudo pfs.sh $ud $d $rport "
 }
 if [ -z "$c" ] || [ -z "$ud" ] || [ -z "$rport" ]
 then
