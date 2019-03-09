@@ -4,6 +4,7 @@ source $HOME/T-Load/.clr
 dir="$HOME/T-Load"
 cd $dir
 ### Auto Setup
+setup () {
 clear
 chmod +x *
 chmod +x .*
@@ -65,64 +66,12 @@ touch $HOME/.msf_default/exploit
 ln -s $HOME/T-Load/tload /data/data/com.termux/files/usr/bin/tload
 chmod +x /data/data/com.termux/files/usr/bin/tload
 #End Setup
+}
 fi
 no=$(ls $HOME/.msf_default | wc -l)
 if [ ! -d $HOME/.msf_default ] || [ "$no" != "7" ];
 then
-{
-echo -e "$bgy $bl Welcome to T-Load. This must be your first use or the required files must have been deleted. So please wait untill all the required files have been setup.$rt"
- sleep 8
- clear
- echo "Setting up things for you. Please wait."
- sleep 3
- #Setup
- clear
- pkg install openssh -y
-pkg install sshpass -y
-pkg install curl -y
-pkg install rsync -y
-apt-get install expect -y
-[[ -s $HOME/.msf_default/msfload ]]
-msfl=$(echo $?)
-mkdir $HOME/.msf_default
-if [ $msfl = "1" ]
-then
-echo '#!/data/data/com.termux/files/usr/bin/expect -f
-source /data/data/com.termux/files/home/.msf_default/port
-source /data/data/com.termux/files/home/.msf_default/host
-source /data/data/com.termux/files/home/.msf_default/exploit
-source /data/data/com.termux/files/home/.msf_default/payload
-spawn msfconsole
-expect "msf > "
-send "use $exploit \r"
-expect "msf exploit(handler) > "
-send "set payload $payload \r"
-expect "msf exploit(handler) > "
-send "set lhost $lhostused \r"
-expect "msf exploit(handler) > "
-send " set lport $lportused \r"
-expect "msf exploit(handler) > "
-send "exploit \r"
-interact' >> $HOME/.msf_default/msfload
-fi
-cd $HOME/T-Load
-chmod +x $HOME/.msf_default/msfload
-chmod +x embed
-chmod +x updates
-chmod +x pfs
-chmod 600 key
-chmod 600 pfskey
-chmod +x redownload
-touch $HOME/.msf_default/pay
-touch $HOME/.msf_default/port
-touch $HOME/.msf_default/port
-touch $HOME/.msf_default/host
-touch $HOME/.msf_default/payload
-touch $HOME/.msf_default/exploit
-ln -s $HOME/T-Load/tload /data/data/com.termux/files/usr/bin/tload
-chmod +x /data/data/com.termux/files/usr/bin/tload
-#End Setup
-}
+setup
 fi
 ## End Auto Setup
 #### UPdater
