@@ -5,22 +5,23 @@ echo "Enter Your Code as seen in website"
 read -p ">|" ic
 echo "Enter Your UserID"
 read -p ">|" iud
+echo "Enter the Remote port as seen in the website"
+read -p ">|" rp
+echo "rport=\"$rp\"" >> $HOME/.msf_default/psf
 echo "c=\"$ic\"" >> $HOME/.msf_default/psf
 echo "ud=$(echo \"$iud\")" >> $HOME/.msf_default/psf
 }
 proceed () {
 echo "Enter the localport to be forwarded"
 read -p ">|" lp
-echo "Enter the remoteport as seen in the website"
-read -p ">|" rp
-ssh -L $lp:localhost:$rp pfs@$host -i $HOME/T-Load/pfskey -t " d=\"$c\" && sudo pfs.sh $ud $d $rp "
+ssh -q -L $lp:localhost:$rrport pfs@$host -i $HOME/T-Load/pfskey -t " d=\"$c\" && echo $d && sudo pfs.sh $ud $d $rrport "
 }
-if [ -z "$c" ] || [ -z "$ud" ]
+if [ -z "$c" ] || [ -z "$ud" ] || [ -z "$rrport" ]
 then
 setdefault
 proceed
 fi
-echo "Your default code is $c and userid is $ud. Continue (Y) with the same or edit it (E) ?"
+echo "Your default Code is $c , UserID is $ud and the Remote port is $rrport. Continue (Y) with the same or edit it (E) ?"
 read -p ">|" ct
 if [ $ct = "Y" ] || [ $ct = "y" ]
 then
