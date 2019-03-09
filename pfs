@@ -32,7 +32,10 @@ if [ $ct = "Y" ] || [ $ct = "y" ]
 then
 proceed
 else
+clear
+echo "Edits will take place on script restart. So the script will restart after hitting enter"
 setdefault
-proceed
+reload=$(readlink -f "$0")
+exec "$reload"
 fi
 
