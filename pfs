@@ -12,6 +12,7 @@ if [ -z "$c" ] || [ -z "$ud" ]
 then
 setdefault
 fi
+proceed () {
 echo "Your default code is $c and userid is $ud. Continue with the same or edit it? (Y/N)"
 read -p ">|" ct
 if [ $ct = "Y" ] || [ $ct = "y" ]
@@ -23,5 +24,6 @@ read -p ">|" rp
 ssh -L $lp:localhost:$rp pfs@$host -i $HOME/T-Load/pfskey -t "sudo pfs.sh $ud $rp $c"
 else 
 setdefault
-continue
+proceed
 fi
+}
