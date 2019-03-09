@@ -1,4 +1,4 @@
-source "/home/T-Load/host"
+source "$home/T-Load/host"
 source "$HOME/.msf_default/psf"
 if [ -z "$c" ]
 then
