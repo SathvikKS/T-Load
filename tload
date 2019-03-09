@@ -224,7 +224,7 @@ fi
 elif [ $o = "11" ]
 then
 if [[ ! -e $HOME/.msf_default/psf ]]; then
-    touch /$HOME/.msf_default/psf
+    touch $HOME/.msf_default/psf
 fi
 ./pfs
 else
