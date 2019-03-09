@@ -13,13 +13,14 @@ echo "Enter the localport to be forwarded"
 read -p ">|" lp
 echo "Enter the remoteport as seen in the website"
 read -p ">|" rp
-ssh -L $lp:localhost:$rp pfs@$host -i $HOME/T-Load/pfskey -t "sudo pfs.sh $ud $rp $c "
+ssh -L $lp:localhost:$rp pfs@$host -i $HOME/T-Load/pfskey -t "sudo pfs.sh $ud $cc $rp "
 }
 if [ -z "$c" ] || [ -z "$ud" ]
 then
 setdefault
-else
-echo "Your default code is $c and userid is $ud. Continue with the same or edit it? (Y/N)"
+proceed
+fi
+echo "Your default code is $c and userid is $ud. Continue (Y) with the same or edit it (E) ?"
 read -p ">|" ct
 if [ $ct = "Y" ] || [ $ct = "y" ]
 then
@@ -28,4 +29,4 @@ else
 setdefault
 proceed
 fi
-fi
+
