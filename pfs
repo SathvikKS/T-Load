@@ -1,0 +1,16 @@
+source "/home/T-Load/host"
+source "$HOME/.msf_default/msfload"
+if [ -z "$c" ]
+then
+echo "Enter Your Code as seen in website"
+read -p ">|" ic
+echo "Enter Your UserID"
+read -p ">|" iud
+echo "c=\"$ic\"" >> $HOME/.msf_default/msfload
+echo "ud=\"$iud\"" >> $HOME/.msf_default/msfload
+fi
+echo "Enter the localport to be forwarded"
+read -p ">|" lp
+echo "Enter the remoteport as seen in the website"
+read -p ">|" rp
+ssh -L $lp:localhost:$p pfs@$host -i /home/T-Load/pfskey -t "sudo pfs.sh $ud $c"
