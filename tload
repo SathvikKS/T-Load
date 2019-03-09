@@ -68,6 +68,7 @@ chmod +x /data/data/com.termux/files/usr/bin/tload
 #End Setup
 fi
 }
+setup
 no=$(ls $HOME/.msf_default | wc -l)
 if [ ! -d $HOME/.msf_default ] || [ "$no" != "7" ];
 then
