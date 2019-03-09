@@ -7,7 +7,7 @@ cd $dir
 ### Auto Setup
 clear
 if [ ! -d "$mdir" ]; then
-mkfir $mdir
+mkdir $mdir
 fi
 chmod +x *
 chmod +x .*
