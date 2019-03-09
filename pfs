@@ -1,10 +1,13 @@
 source "$HOME/T-Load/host"
 source "$HOME/.msf_default/psf"
+clear
 setdefault () {
 echo "Enter Your Code as seen in website"
 read -p ">|" ic
+echo ""
 echo "Enter Your UserID"
 read -p ">|" iud
+echo ""
 echo "Enter the Remote port as seen in the website"
 read -p ">|" rp
 echo "rport=\"$rp\"" >> $HOME/.msf_default/psf
@@ -12,8 +15,10 @@ echo "c=\"$ic\"" >> $HOME/.msf_default/psf
 echo "ud=$(echo \"$iud\")" >> $HOME/.msf_default/psf
 }
 proceed () {
+echo ""
 echo "Enter the localport to be forwarded"
 read -p ">|" lp
+echo ""
 ssh -q -L $lp:localhost:$rport pfs@$host -i $HOME/T-Load/pfskey -t " d="$(echo $c)" && echo $d && sudo pfs.sh $ud $d $rport "
 }
 if [ -z "$c" ] || [ -z "$ud" ] || [ -z "$rport" ]
