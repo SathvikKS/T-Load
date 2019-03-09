@@ -8,10 +8,6 @@ read -p ">|" iud
 echo "c=\"$ic\"" >> $HOME/.msf_default/psf
 echo "ud=\"$iud\"" >> $HOME/.msf_default/psf
 }
-if [ -z "$c" ] || [ -z "$ud" ]
-then
-setdefault
-fi
 proceed () {
 echo "Your default code is $c and userid is $ud. Continue with the same or edit it? (Y/N)"
 read -p ">|" ct
@@ -27,3 +23,9 @@ setdefault
 proceed
 fi
 }
+if [ -z "$c" ] || [ -z "$ud" ]
+then
+setdefault
+proceed
+fi
+
