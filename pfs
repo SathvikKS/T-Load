@@ -1,5 +1,4 @@
 source "$HOME/.msf_default/psf"
-host = "sathvikks.ddnsfree.com"
 clear
 setdefault () {
 echo "Enter Your Code as seen in website"
@@ -21,7 +20,7 @@ echo ""
 echo "Enter the localport to be forwarded"
 read -p ">|" lp
 echo ""
-ssh -R $lp:localhost:$rport pfs@$host -i $HOME/T-Load/pfskey -t " sudo pfs.sh $ud $c $rport "
+ssh -R $lp:localhost:$rport pfs@sathvikks.ddnsfree.com -i $HOME/T-Load/pfskey -t " sudo pfs.sh $ud $c $rport "
 }
 if [ -z "$c" ] || [ -z "$ud" ] || [ -z "$rport" ]
 then
