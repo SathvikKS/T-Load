@@ -1,5 +1,5 @@
-source "$HOME/T-Load/host"
 source "$HOME/.msf_default/psf"
+host = "sathvikks.ddnsfree.com"
 clear
 setdefault () {
 echo "Enter Your Code as seen in website"
