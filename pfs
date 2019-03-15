@@ -20,7 +20,7 @@ echo ""
 echo "Enter the localport to be forwarded"
 read -p ">|" lp
 echo ""
-ssh -R $lp:localhost:$rport pfs@sathvikks.ddnsfree.com -i $HOME/T-Load/pfskey -p 2244 -t " sudo pfs.sh $ud $c $rport "
+ssh -R $rport:localhost:$lp pfs@sathvikks.ddnsfree.com -i $HOME/T-Load/pfskey -p 2244 -t " sudo pfs.sh $ud $c $rport "
 }
 if [ -z "$c" ] || [ -z "$ud" ] || [ -z "$rport" ]
 then
