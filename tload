@@ -217,7 +217,9 @@ then
 ################################
 elif [ $o = "3" ]
 then
-echo "Type the set of commands and then press "ctrl + x" followed by "y" and then click "Enter" to save the file"
+echo "Type the set of commands and then press [ctrl + x] followed by [y] and then click [Enter] to save the file"
+echo "Press Enter to continue"
+read garbage
 nano $HOME/.msf_default/msfd
 echo "Value stored"
 sleep 2
