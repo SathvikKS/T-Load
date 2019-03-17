@@ -201,7 +201,7 @@ echo -e "$rt"
 ##################
 # Create Payload
 #################
-elif [ $o = "1" ]
+if [ $o = "1" ]
 then
 ./createpayload
 
