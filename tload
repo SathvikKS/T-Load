@@ -182,114 +182,82 @@ then
 ./embed
 fi
 echo -e "$rd $bcn----------------------------------$rt"
-echo -e "$rd $bd $ul $bgy   Version = 8.0 Beta$rt "
+echo -e "$rd $bd $ul $bgy     Version = 8.0 $rt "
 echo -e "$rd $bcn----------------------------------$rt"
 echo -e "$bl $bgy     SCRIPT BY SATHVIK K S        $rt "
 echo -e "$rd $bcn----------------------------------$rt"
 echo -e "$bwt $bk Select option $rt $rd"
 echo "1. Create Payload"
 echo "2. Embed Payload"
-echo "3. Launch msfconsole normally"
-echo "4. Exit"
-echo "5. Set default metasploit exploit to be used"
-echo "6. Set default metasploit payload to be used"
-echo "7. Set default metasploit lhost  to be used"
-echo "8. Set default metasploit lport to be used"
-echo "9. Launch msfconsole with default values"
-echo "10. Redownload"
-echo "11. Port Forward (I need Testers) "
+echo "3. Set default commands for msfconsole"
+echo "4. Launch msfconsole with default values"
+echo "5. Port Forward "
+echo "6. Redownload"
+echo "7. Exit"
 echo -e "$rt $bbl"
 read -p ">|" o 
 echo -e "$rt"
-if [ $o = "0" ]
-then
-./setup
-elif [ $o = "10" ]
-then
-./redownload
-elif [ $o = "3" ]
-then
-clear
-cd $metapath
-./msfconsole
-tload
-elif [ $o = "2" ]
-then
-./embed
+
+##################
+# Create Payload
+#################
 elif [ $o = "1" ]
 then
 ./createpayload
+
+##########
+# Embed
+##########
+elif [ $o = "2" ]
+then
+./embed
+
+#################################
+# Set Default msfconsole values
+################################
+elif [ $o = "3" ]
+then
+echo "Type the set of commands and then press "ctrl + x" followed by "y" and then click "Enter" to save the file"
+nano $HOME/.msf_default/msfd
+echo "Value stored"
+sleep 2
+tload
+
+#########################################
+# Launch msfconsole with default values
+#########################################
 elif [ $o = "4" ]
 then
-clear
-exit
+msfconsole -r $HOME/.msf_default/msfd
+
+################
+# Port Forward
+################
 elif [ $o = "5" ]
-then
-rm $HOME/.msf_default/exploit
-clear
-echo "Enter exploit to be used"
-read -p ">|" ex
-echo "set exploit \"$ex\"" >> $HOME/.msf_default/exploit
-echo "Value stored"
-sleep 2
-tload
-elif [ $o = "6" ]
-then
-rm $HOME/T-Load/msf_default/payload
-clear
-echo "Enter payload to be used"
-read -p ">|" py
-echo "set payload \"$py\"" >> $HOME/.msf_default/payload
-echo "Value stored"
-sleep 2
-tload
-elif [ $o = "7" ]
-then
-rm $HOME/T-Load/msf_default/host
-clear
-echo "Enter lhost to be used"
-read -p ">|" lh
-echo "set lhostused \"$lh\"" >> $HOME/.msf_default/host
-echo "Value stored"
-sleep 2
-tload
-elif [ $o = "8" ]
-then
-rm $HOME/.msf_default/port
-clear
-echo "Enter lport to be used"
-read -p ">|" lp
-echo "set lportused \"$lp\"" >> $HOME/.msf_default/port
-echo "Value stored"
-sleep 2
-tload
-elif [ $o = "9" ]
-then
-[[ -s $HOME/.msf_default/exploit ]]
-exp=$(echo $?)
-[[ -s $HOME/.msf_default/payload ]]
-pay=$(echo $?)
-[[ -s $HOME/.msf_default/host ]]
-hos=$(echo $?)
-[[ -s $HOME/.msf_default/port ]]
-por=$(echo $?)
-if [ $exp = $pay ] && [ $hos = $por ] && [ $exp = $hos ] && [ $exp = "0" ]
-then
-clear
-$HOME/.msf_default/msfload
-else
-clear
-tload
-echo "One or more of the default values have not been set. Please try again"
-sleep 4
-tload
-fi
-elif [ $o = "11" ]
 then
 if [[ ! -e $HOME/.msf_default/psf ]]; then
     touch $HOME/.msf_default/psf
 fi
 ./pfs
+
+###############
+# Redownload
+###############
+elif [ $o = "6" ]
+then
+./redownload
+
+#########
+# Exit
+#########
+elif [ $o = "7" ]
+then
+clear
+exit
+
+#######
+# End 
+#######
 else
 echo "Wrong choice. Please try again"
 sleep 3
