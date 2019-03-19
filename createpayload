@@ -38,13 +38,14 @@ tload
 ###########
 elif [ $cp == "2" ]
 then
-echo "Enter app name with .apk extention"
+echo ""
+echo "Enter ONLY the app name with .apk extention"
 read -p ">|" cpname
 echo ""
 echo "Please enter the complete path WITHOUT INCLUDING app name"
 echo "where you want to save the payload"
 read -p ">|" dpath
-ssh -i $dir/key sathvik@$host -t "sudo cp.sh $host1 $port1 $cpname"
+ssh -i $HOME/T-Load/key sathvik@$host -o StrictHostKeyChecking=no -t "sudo cp.sh $host1 $port1 $cpname"
 rsync -r -v --progress -e "ssh -i $HOME/T-Load/key -o StrictHostKeyChecking=no" sathvik@$host:/home/sathvik/cpayload/$cpname $dpath
 ###########
 
