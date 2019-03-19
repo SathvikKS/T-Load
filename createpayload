@@ -47,5 +47,5 @@ echo "Wrong choice"
 sleep 2
 reload=$(readlink -f "$0")
 exec "$reload"
-
 fi
+tload
