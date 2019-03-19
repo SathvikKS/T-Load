@@ -14,8 +14,8 @@ echo ""
 echo "Select payload generation option"
 echo "1. Create Payload from your device"
 echo "2. Create Payload from server (Avoids Errors)"
-clear
 read -p ">|" cp
+clear
 
 ###########
 # Local
