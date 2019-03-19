@@ -235,6 +235,7 @@ tload
 elif [ $o = "4" ]
 then
 clear
+cd
 msfconsole -r $HOME/.msf_default/msfd
 
 ################
