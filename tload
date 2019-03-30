@@ -194,6 +194,7 @@ echo "4. Launch msfconsole with default values"
 echo "5. Port Forward "
 echo "6. Redownload"
 echo "7. Exit"
+ech0 "8. IMPORTANT NOTE (30-03-2019) (Please see it!)"
 echo -e "$rt $bbl"
 read -p ">|" o 
 echo -e "$rt"
@@ -260,11 +261,19 @@ clear
 #########
 # Exit
 #########
-elif [ $o = "7" ]
+eli"
+echo "f [ $o = "7" ]
 then
 clear
+
+#########
+# Important notice
+#########
+elif [ $o = "8" ]
+then
 clear
-exit
+echo "Some users have been rejected due to the use of disposable emials. To make sure you are not one of them,"
+echo "Please vist https://sathvikks.tk/rj/ to check the list of rejected users and create a new account"
 
 #######
 # End 
