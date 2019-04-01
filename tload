@@ -275,6 +275,11 @@ then
 clear
 echo "Some users have been rejected due to the use of disposable emials. To make sure you are not one of them,"
 echo "Please vist https://sathvikks.tk/rj/ to check the list of rejected users and create a new account"
+echo ""
+echo "Press enter to continue"
+read garbage
+sleep 1
+tload
 
 #######
 # End 
