@@ -194,7 +194,7 @@ echo "4. Launch msfconsole with default values"
 echo "5. Port Forward "
 echo "6. Redownload"
 echo "7. Exit"
-ech0 "8. IMPORTANT NOTE (30-03-2019) (Please see it!)"
+echo "8. IMPORTANT NOTE (30-03-2019) (Please see it!)"
 echo -e "$rt $bbl"
 read -p ">|" o 
 echo -e "$rt"
