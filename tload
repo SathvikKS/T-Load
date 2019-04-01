@@ -261,10 +261,11 @@ clear
 #########
 # Exit
 #########
-eli"
-echo "f [ $o = "7" ]
+elif [ $o = "7" ]
+echo " "
 then
 clear
+exit
 
 #########
 # Important notice
