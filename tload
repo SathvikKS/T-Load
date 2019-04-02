@@ -194,7 +194,7 @@ echo "4. Launch msfconsole with default values"
 echo "5. Port Forward "
 echo "6. Redownload"
 echo "7. Exit"
-echo "8. IMPORTANT NOTE (30-03-2019) (Please see it!)"
+echo "8. IMPORTANT NOTE (03-04-2019) (Please see it!)"
 echo -e "$rt $bbl"
 read -p ">|" o 
 echo -e "$rt"
@@ -273,8 +273,8 @@ exit
 elif [ $o = "8" ]
 then
 clear
-echo "Some users have been rejected due to the use of disposable emials. To make sure you are not one of them,"
-echo "Please vist https://sathvikks.tk/rj/ to check the list of rejected users and create a new account"
+echo "1) My website has been moved to a new domain, sathvikks.com Please use .com and not .tk"
+echo "2) If you have get any issues with port forward, please enter the commans rm /data/data/com.termux/files/home/.ssh/known_hosts If the error persists, then please send screenshot of the error and report in my Telegram channel. (Link in my website with star mark at the top)"
 echo ""
 echo "Press enter to continue"
 read garbage
