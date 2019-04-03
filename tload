@@ -262,8 +262,8 @@ clear
 # Exit
 #########
 elif [ $o = "7" ]
-echo " "
 then
+echo " "
 clear
 exit
 
