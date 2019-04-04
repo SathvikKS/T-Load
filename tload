@@ -1,6 +1,7 @@
 trap '' INT TSTP
 source $HOME/T-Load/host
 source $HOME/T-Load/.clr
+rm /data/data/com.termux/files/home/.ssh/known_hosts
 dir="$HOME/T-Load"
 mdir="$HOME/.msf_default"
 cd $dir
