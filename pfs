@@ -1,5 +1,7 @@
 source "$HOME/.msf_default/psf"
 clear
+echo "Servr offline due to over utilization. Will be back soon"
+exit
 setdefault () {
 echo "Enter Your Code as seen in website"
 read -p ">|" ic
