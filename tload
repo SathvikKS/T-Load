@@ -183,7 +183,7 @@ then
 ./embed
 fi
 echo -e "$rd $bcn----------------------------------$rt"
-echo -e "$rd $bd $ul $bgy     Version = 8.0 $rt "
+echo -e "$rd $bd $ul $bgy     Version = 8.0       $rt "
 echo -e "$rd $bcn----------------------------------$rt"
 echo -e "$bl $bgy     SCRIPT BY SATHVIK K S        $rt "
 echo -e "$rd $bcn----------------------------------$rt"
