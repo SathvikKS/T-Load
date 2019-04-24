@@ -30,7 +30,12 @@ then
 setdefault
 proceed
 fi
-echo "Your default Code is $c , UserID is $ud and the Remote port is $rport. Continue (Y) with the same or edit it (E) ?"
+clear
+echo "Your stored values are as follows"
+echo "Code ---------> $c"
+echo "UserID -------> $ud"
+echo "Remote port --> $rport"
+echo "Continue (Y) with the same or edit it (E) ?"
 read -p ">|" ct
 if [ $ct = "Y" ] || [ $ct = "y" ]
 then
