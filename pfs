@@ -32,9 +32,11 @@ proceed
 fi
 clear
 echo "Your stored values are as follows"
+echo ""
 echo "Code ---------> $c"
 echo "UserID -------> $ud"
 echo "Remote port --> $rport"
+echo ""
 echo "Continue (Y) with the same or edit it (E) ?"
 read -p ">|" ct
 if [ $ct = "Y" ] || [ $ct = "y" ]
