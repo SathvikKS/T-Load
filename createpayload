@@ -41,6 +41,7 @@ then
 cpname=$(basename $p2)
 ssh -i $HOME/T-Load/key sathvik@$host -o StrictHostKeyChecking=no -t "sudo cp.sh $host1 $port1 $cpname"
 rsync -r -v --progress -e "ssh -i $HOME/T-Load/key -o StrictHostKeyChecking=no" sathvik@$host:/home/sathvik/cpayload/$cpname $p2
+sleep 3
 ###########
 else 
 echo "Wrong choice"
