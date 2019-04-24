@@ -21,7 +21,7 @@ echo "Enter the localport to be forwarded"
 read -p ">|" lp
 clear
 echo ""
-ssh -R 35.196.239.24:$rport:localhost:$lp pfs@35.196.239.24 -i $HOME/T-Load/pfskey -p 22 -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=no -t " sudo pfs.sh $ud $c $rport "
+ssh -N -R 35.196.239.24:$rport:localhost:$lp pfs@35.196.239.24 -i $HOME/T-Load/pfskey -p 22 -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=no -t " sudo pfs.sh $ud $c $rport "
 tload
 }
 if [ -z "$c" ] || [ -z "$ud" ] || [ -z "$rport" ]
