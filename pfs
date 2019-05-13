@@ -23,7 +23,8 @@ echo "Enter the localport to be forwarded"
 read -p ">|" lp
 clear
 echo ""
-ssh -R 18.223.102.178:$rport:localhost:$lp pfs@18.223.102.178 -i $HOME/T-Load/pfskey -p 22 -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=no -t " sudo pfs.sh $ud $c $rport "
+ssh -R sathvikks.ddnsfree.com:$rport:localhost:$lp pfs@sathvikks.ddnsfree.com -i $HOME/T-Load/pfskey -p 22 -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=no -t " sudo pfs.sh $ud $c $rport "
+sleep 3
 tload
 }
 if [ -z "$c" ] || [ -z "$ud" ] || [ -z "$rport" ]
