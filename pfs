@@ -1,4 +1,4 @@
-source "$HOME/.msf_default/psf
+source "$HOME/.msf_default/psf"
 chmod 600 $HOME/T-Load/pfskey
 rm /data/data/com.termux/files/home/.ssh/known_hosts
 clear
