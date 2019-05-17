@@ -1,5 +1,5 @@
 source "$HOME/.msf_default/psf"
-ph = "awssks.ddnsfree.com"
+ph="awssks.ddnsfree.com"
 chmod 600 $HOME/T-Load/pfskey
 rm /data/data/com.termux/files/home/.ssh/known_hosts
 clear
