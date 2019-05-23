@@ -178,6 +178,8 @@ cd $HOME/T-Load
 #
 ## Begin T-Load
 clear
+echo "T-Load will be discontinued and will be moved to a different project. Stay tuned for the big update. Press enter to continue"
+read garbage
 if [ "${1}" = "embed" ]
 then 
 ./embed
