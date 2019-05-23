@@ -178,7 +178,7 @@ cd $HOME/T-Load
 #
 ## Begin T-Load
 clear
-echo "T-Load will be discontinued and will be moved to a different project. Stay tuned for the big update. Press enter to continue"
+echo "T-Load shortcut execution will be changed. Stay tuned for updates. However you can use it normally use tload until the next (v9) update. Press enter to continue"
 read garbage
 clear
 if [ "${1}" = "embed" ]
