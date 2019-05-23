@@ -10,4 +10,4 @@ Now has a persistent port forwarding featue.
 
 ## You can support me by donating money on Paytm at
 http://p-y.tm/QZGa-Pm  
-### For more details like installation please visit https://sathvikks.tk/tload
+### For more details like installation please visit https://services.sathvikks.com/tload
