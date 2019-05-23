@@ -179,7 +179,10 @@ cd $HOME/T-Load
 ## Begin T-Load
 clear
 echo "T-Load shortcut execution will be changed. Stay tuned for updates. However you can use it normally use tload until the next (v9) update. Press enter to continue"
-echo "GET READY FOR A BIG UPDATE TOMORROW (24-05-20019)"
+echo ""
+echo "###################################################"
+echo "#GET READY FOR A BIG UPDATE TOMORROW (24-05-20019)#"
+echo "###################################################"
 read garbage
 clear
 if [ "${1}" = "embed" ]
