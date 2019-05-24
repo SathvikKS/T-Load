@@ -1,5 +1,6 @@
 setup() {
 clear
+mdir=$HOME/.msf_default
 if [ ! -d "$mdir" ]
 then
 mkdir $mdir
