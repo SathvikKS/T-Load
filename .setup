@@ -8,6 +8,14 @@ then
 rm $PREFIX/bin/tload
 fi
 
+###############################
+## Remove  tload from T-Load ##
+###############################
+if [ -e $HOME/tload ]
+then
+rm $HOME/tload
+fi
+
 ###################################
 ## Remove .msf_default directory ##
 ###################################
@@ -196,9 +204,9 @@ fi
 ## End of package install ##
 ############################
 
-#################################
+######################################
 ## Check for files in .skstool_data ##
-#################################
+######################################
 if [ ! -e $HOME/.skstool_data/pay ]
 then
 touch $HOME/.skstool_data/pay
