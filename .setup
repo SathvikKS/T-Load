@@ -132,9 +132,9 @@ read garbage
 
 fi
 
-###############################
+######################################
 ## Create .skstool_data_data folder ##
-###############################
+######################################
 if [ ! -d $HOME/.skstool_data ]
 then
 mkdir $HOME/.skstool_data
@@ -334,4 +334,3 @@ else
 echo "This setup will run automatically along with skstool"
 echo -e "If you need to manually run then please use $bgw $bl setup run $rt command "
 fi
-
