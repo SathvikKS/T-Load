@@ -1,18 +1,18 @@
 clear
 echo "Removing old version"
 echo "Downloading new version "
-mkdir $HOME/temptload
-cd $HOME/temptload
+mkdir $HOME/tempskstool
+cd $HOME/tempskstool
 git clone https://github.com/SathvikKS/T-Load.git
 cd $HOME
 rm -rf T-Load
-cp $HOME/temptload/T-Load -r  $HOME
-rm -rf temptload
+cp $HOME/tempskstool/T-Load -r  $HOME
+rm -rf tempskstool
 cd $HOME
 echo "Done updating the new script from github"
 echo "You can now work with it normally"
 sleep 2
 clear
-chmod +x /data/data/com.termux/files/usr/bin/tload
 cd $HOME/T-Load
-tload
+./.setup run
+skstool
