@@ -251,14 +251,11 @@ chmod +x *
 chmod 600 pfskey
 chmod 600 key
 
-######################################
-## Symlink test for executable file ##
-######################################
-if [ ! -f $PREFIX/bin/skstool ]
-then
-ln -s $HOME/T-Load/skstool $PREFIX/bin/skstool &> /dev/null
-fi
-
+########################################
+## Set permission for executable file ##
+########################################
+cp $HOME/T-Load/skstool $PREFIX/bin/skstool
+chmod +x $PREFIX/bin/skstool
 
 ######################
 ## End of autosetup ##
