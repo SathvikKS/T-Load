@@ -44,7 +44,7 @@ fi
 ###################################
 if [ -d $HOME/.msf_default ]
 then
-rm $HOME/.msf_default
+rm $HOME/.msf_default -r
 fi
 
 echo "Checking for dependecy Installations"
@@ -255,7 +255,6 @@ then
 rm $PREFIX/bin/skstool
 fi
 ln -s skstool $PREFIX/bin/skstool
-chmod +x $PREFIX/bin/skstool
 
 ######################
 ## End of autosetup ##
