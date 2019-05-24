@@ -303,6 +303,14 @@ echo "Installing java"
 ###########################
 ## Force install Apktool ##
 ###########################
+if [ -e $PREFIX/bin/apktool ]
+then
+rm $PREFIX/bin/apktool
+fi
+if [ -e $PREFIX/bin/apktool.jar ]
+then
+rm $PREFIX/bin/apktool.jar
+fi
 echo "Installing apktool"
 echo ""
 	echo "Take a screenshot if you find any error"
@@ -321,6 +329,10 @@ sleep 5
 ############################
 ## Force install zipalign ##
 ############################
+if [ -e $PREFIX/bin/zipalign ]
+then
+rm $PREFIX/bin/zipalign
+fi
 echo "Installing  zipalign"
 echo ""
 	echo "Take a screenshot if you find any error"
