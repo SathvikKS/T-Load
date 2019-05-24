@@ -1,10 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
-cd $HOME/T-Load
-chmod +x .setupcheck
-chmod +x .setup
-chmod +x .autoupdate
-source $HOME/T-Load/.setup
-source $HOME/T-Load/.autoupdate
+source $HOME/T-Load/.setup 2>&1 > /dev/null
+source $HOME/T-Load/.autoupdate 2>&1 > /dev/null
 source $HOME/T-Load/.notice
 ####################
 ## Call Functions ##
@@ -117,9 +113,9 @@ skstool
 #############
 elif [ $o = "9" ]
 then
-echo "1) Sathvik K S -> Creator and Maintainer of T-Load"
-echo "2) Hax4Us -> Provided java, apktool and zipalign"
-echo "3) Karan and Hitesh for being honest and prompt testers of the script"
+echo "1) Sathvik K S -> Creator and Maintiner of T-Load"
+echo "2) Hax4Us -> Providing java, apktool and zipalign"
+echo "3) Karan and Hitesh for being honest and promt testers of the script"
 echo ""
 echo "Press enter to go back"
 read garbage
