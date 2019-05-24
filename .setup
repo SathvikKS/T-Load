@@ -333,4 +333,5 @@ exit
 else
 echo "This setup will run automatically along with skstool"
 echo -e "If you need to manually run then please use $bwt $bl setup run $rt command "
+echo -e "\e[32mZipalign was successfully installed!\e[39m"
 fi
