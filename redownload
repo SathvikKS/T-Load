@@ -15,5 +15,7 @@ sleep 2
 clear
 cd $HOME/T-Load
 chmod +x *
+chmod +x .setup
+chmod +x .autoupdate
 ./.setup run
 skstool
