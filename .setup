@@ -232,11 +232,13 @@ ln -s skstool $PREFIX/bin/skstool
 }
 if [ "${1}" == "run" ]
 then
+clear
 echo "Running setup on manual invoke"
 sleep 2
 setup
 elif [ "${1}" == "force" ]
 then
+clear
 echo -e "\e[1;31m WARNING! \e[107m Force installation is initiated."
 echo -e "\e[1;31m \e[107m This may be unstable"
 echo -e "\e[1;31m \e[107m Proceed at your own risk"
@@ -331,6 +333,7 @@ read garbage
 exit 
 
 else
+clear
 echo "This setup will run automatically along with skstool"
 echo -e "If you need to manually run then please use \e[107m\e[1;34m setup run \e[0m command "
 fi
