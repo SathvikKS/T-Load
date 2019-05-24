@@ -1,17 +1,16 @@
 #!/data/data/com.termux/files/usr/bin/bash
-clear
-cd $HOME/T-Load
+cd $HOME/T-Load/
 source $HOME/T-Load/.setup 2>&1 > /dev/null
 source $HOME/T-Load/.autoupdate 2>&1 > /dev/null
 source $HOME/T-Load/.notice
+chmod +x ./.setup
+chmod +x ./.autoupdate
 ####################
 ## Call Functions ##
 ####################
-autoupdate
-sleep 1
-clear
 setup
-sleep 1
+autoupdate
+
 ######################
 ## Start of skstool ##
 ######################
