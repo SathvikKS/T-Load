@@ -1,5 +1,4 @@
 source $HOME/T-Load/host
-source $HOME/T-Load/skstool
 if [ -e $HOME/T-Load/tload ]
 then
 echo "Embed is closed until V9 is released. Stay tuned"
