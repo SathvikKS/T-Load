@@ -4,10 +4,9 @@ then
 rm $PREFIX/bin/tload
 fi
 clear
-mdir=$HOME/.msf_default
-if [ ! -d "$mdir" ]
+if [ ! -d $HOME/.msf_default ]
 then
-mkdir $mdir
+mkdir $HOME/.msf_default
 fi
 chmod +x *
 chmod +x .*
