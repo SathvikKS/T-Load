@@ -188,10 +188,10 @@ touch $HOME/.msf_default/exploit
 ln -s $HOME/T-Load/tload /data/data/com.termux/files/usr/bin/tload
 chmod +x /data/data/com.termux/files/usr/bin/tload
 }
-if [ ${1} == "run" ]
+if [ "${1}" == "run" ]
 then
 setup
-elif [ ${1} == "force" ]
+elif [ "${1}" == "force" ]
 then
 ##################
 ## Java Install ##
