@@ -1,7 +1,10 @@
 source "$HOME/.msf_default/psf"
 ph="awssks.ddnsfree.com"
 chmod 600 $HOME/T-Load/pfskey
+if [ -e $HOME/.ssh/known_hosts ]
+then
 rm /data/data/com.termux/files/home/.ssh/known_hosts
+fi
 clear
 setdefault () {
 echo "Enter Your Code as seen in website"
@@ -26,7 +29,7 @@ clear
 echo ""
 ssh -R $ph:$rport:localhost:$lp pfs@$ph -i $HOME/T-Load/pfskey -p 22 -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=no -t " sudo pfs.sh $ud $c $rport "
 sleep 3
-tload
+skstool
 }
 if [ -z "$c" ] || [ -z "$ud" ] || [ -z "$rport" ]
 then
@@ -52,4 +55,3 @@ setdefault
 reload=$(readlink -f "$0")
 exec "$reload"
 fi
-
