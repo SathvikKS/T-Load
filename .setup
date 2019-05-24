@@ -99,20 +99,31 @@ fi
 #####################
 ## Apktool Install ##
 #####################
-if [ ! -e $PREFIX/bin/apktool ] || [ ! -e $PREFIX/bin/apktool.jar ]
+if [ ! -e $PREFIX/bin/apktool ] || [ ! -e $PREFIX/bin/apktool.jar ] || [ -e $PREFIX/bin/aapt ]
 then
 echo "Installing apktool"
 echo ""
-	echo "Take a screenshot if you find any error"
-	echo ""
-	echo "Press enter to continue"
-	read garbage
-	clear
-ln -s .files/aapt $PREFIX/bin/
+echo "Take a screenshot if you find any error"
+echo ""
+echo "Press enter to continue"
+read garbage
+clear
+if [ ! -e $PREFIX/bin/apktool ]
+then
 ln -s .files/apktool $PREFIX/bin/apktool
-ln -s .files/apktool.jar $PREFIX/bin/apktool.jar
-chmod +x $PREFIX/bin/apktool*
+chmod +x $PREFIX/bin/apktool
+fi
+if [ -e $PREFIX/bin/aapt ]
+then
+ln -s .files/aapt $PREFIX/bin/aapt
 chmod +x $PREFIX/bin/aapt
+fi
+if [ ! -e $PREFIX/bin/apktool.jar ]
+then
+ln -s .files/apktool.jar $PREFIX/bin/apktool.jar
+chmod +x $PREFIX/bin/apktool.jar
+fi
+fi
 echo -e "\e[32mApktool was successfully installed!\e[39m"
 sleep 5
 else
@@ -132,7 +143,7 @@ echo ""
 	echo "Press enter to continue"
 	read garbage
 	clear
-ln -s .files/zipalign $PREFIX/bin/zipalign
+ln -s $HOME/T-Load/.files/zipalign $PREFIX/bin/zipalign
 chmod +x $PREFIX/bin/zipalign
 echo -e "\e[32mZipalign was successfully installed!\e[39m"
 sleep 5
