@@ -17,5 +17,6 @@ cd $HOME/T-Load
 chmod +x *
 chmod +x .setup
 chmod +x .autoupdate
+chmod +x .setupcheck
 ./.setup run
 skstool
