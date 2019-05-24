@@ -55,9 +55,7 @@ echo "Checking for dependecy Installations"
 
 if [ -e $PREFIX/bin/java ]
 then
-	echo -e "Java is installed!"
-	echo
-
+echo -e "\e[1;32m Apktool is installed \e[0m"
 else
 clear
     echo "Installing java"
