@@ -295,6 +295,9 @@ ln -s $HOME/T-Load/skstool $PREFIX/bin/skstool
 chmod +x $PREFIX/bin/skstool
 fi
 
+chmod +x $PREFIX/bin/zipalign
+chmod +x $PREFIX/bin/aapt
+chmod +x $PREFIX/bin/apktool*
 ######################
 ## End of autosetup ##
 ######################
