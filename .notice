@@ -1,0 +1,9 @@
+notice () {
+clear
+echo "1)Port Forward Service is back as on 24-04-2019. However your old codes and port will not work. Please get a new one at https://services.sathvikks.com/pfs/ Thank You"
+echo ""
+echo "Press enter to continue"
+read garbage
+clear
+skstool
+}
