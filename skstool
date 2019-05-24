@@ -6,9 +6,11 @@ source $HOME/T-Load/.notice
 ####################
 ## Call Functions ##
 ####################
-setup
 autoupdate
-
+sleep 1
+clear
+setup
+sleep 1
 ######################
 ## Start of skstool ##
 ######################
