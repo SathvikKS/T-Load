@@ -34,7 +34,7 @@ fi
 }
 if [ "${1}" == "run" ]
 then
-setup
+autoupdate
 else
 echo "This updater will run automatically. Only run this in case of emergency"
 fi
