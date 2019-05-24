@@ -1,32 +1,29 @@
-setup() {
+setup () {
+source $HOME/T-Load/.clr
+###########################
+## Remove existing tload ##
+###########################
 if [ -e $PREFIX/bin/tload ]
 then
 rm $PREFIX/bin/tload
 fi
-clear
-if [ ! -d $HOME/.msf_default ]
-then
-mkdir $HOME/.msf_default
-fi
-chmod +x *
-chmod +x .*
-chmod 600 key
-chmod +x pfs
-chmod 600 pfskey
-###################
-## Download Java ##
-###################
 
-echo
+echo "Checking for dependecy Installations"
+
+##################
+## Install Java ##
+##################
+
 if [ -e $PREFIX/bin/java ]
 then
-	echo -e "\e[32mJava is already installed!"
+	echo -e "Java is installed!"
 	echo
 
 else
+clear
     echo "Installing java"
 	echo ""
-	echo "Take a screcho -enshot if you find any error"
+	echo "Take a screenshot if you find any error"
 	echo ""
 	echo "Press enter to continue"
 	read garbage
@@ -42,7 +39,7 @@ else
 	arm)
 		archname="arm" ;;
 	*)
-		echo -e "\e[91mERROR: Unknown architecture."; echo; echo"Unable to install java. Embeding payload offline will not work"; slecho -ep 5 ;;
+		echo -e "\e[91mERROR: Unknown architecture."; echo; echo "Unable to install java. Embeding payload offline will not work"; sleep 5; exit ;;
 	esac
 	echo -e "\e[32m[*] \e[34mDownloading JDK-8 (~70Mb) for ${archname}..."
 	wget https://github.com/Hax4us/java/releases/download/v8/jdk8_${archname}.tar.gz
@@ -58,20 +55,18 @@ else
 	rm -rf $PREFIX/share/bin
 	echo
 	echo -e "\e[32mJava was successfully installed!\e[39m"
-	slecho -ep 3
+	sleep 3
 	echo
 fi
 
 #####################
-## Install apktool ##
+## Apktool Install ##
 #####################
-
-
 if [ ! -e $PREFIX/bin/apktool ] || [ ! -e $PREFIX/bin/apktool.jar ]
 then
 echo "Installing apktool"
 echo ""
-	echo "Take a screcho -enshot if you find any error"
+	echo "Take a screenshot if you find any error"
 	echo ""
 	echo "Press enter to continue"
 	read garbage
@@ -82,19 +77,20 @@ ln -s .files/apktool.jar $PREFIX/bin/apktool.jar
 chmod +x $PREFIX/bin/apktool*
 chmod +x $PREFIX/bin/aapt
 echo -e "\e[32mApktool was successfully installed!\e[39m"
-slecho -ep 5
+sleep 5
+else
+echo -e "$gr Apktool is installed $rt"
 fi
 
 ######################
 ## Install Zipalign ##
 ######################
 
-
 if [ ! -e $PREFIX/bin/zipalign ]
 then
 echo "Installing  zipalign"
 echo ""
-	echo "Take a screcho -enshot if you find any error"
+	echo "Take a screenshot if you find any error"
 	echo ""
 	echo "Press enter to continue"
 	read garbage
@@ -102,104 +98,156 @@ echo ""
 ln -s .files/zipalign $PREFIX/bin/zipalign
 chmod +x $PREFIX/bin/zipalign
 echo -e "\e[32mZipalign was successfully installed!\e[39m"
-slecho -ep 5
+sleep 5
 clear
+else
+echo -e "$gr Zipalign is installed $rt"
 fi
 
 ########################
-## Check Dependencies ##
+## Check for packages ##
 ########################
 OS=$(./.setupcheck openssh)
 SP=$(./.setupcheck sshpass)
 CU=$(./.setupcheck curl)
 RS=$(./.setupcheck rsync)
 EX=$(./.setupcheck expect)
-NA=(./.setupcheck nano)
-no=$(ls $HOME/.msf_default | wc -l)
-if [ "$OS" == "0" ] || [ "$SP" == "0" ] || [ "$CU" == "0" ] || [ "$RS" == "0" ] || [ "$EX" == "0" ] || [ "$NA" == "0" ] || [ ! -d $HOME/.msf_default ] || [ "$no" != "7" ]
+NA=$(./.setupcheck nano)
+no=$(ls $HOME/.skstool | wc -l)
+if [ "$OS" == "0" ] || [ "$SP" == "0" ] || [ "$CU" == "0" ] || [ "$RS" == "0" ] || [ "$EX" == "0" ] || [ "$NA" == "0" ] || [ ! -d $HOME/.skstool ]
 then
 clear
-echo -e "$bgy $bl Welcome to T-Load. This must be your first use or the required files must have becho -en deleted. So please wait untill all the required files have becho -en setup.$rt"
-slecho -ep 8
-#Setup
-##########################
-## Install Dependencies ##
-##########################
-pkg install openssh -y
-pkg install sshpass -y
-pkg install curl -y
-pkg install rsync -y
-pkg install nano -y
-apt-get install expect -y
-[[ -s $HOME/.msf_default/msfload ]]
-msfl=$(echo $?)
-mkdir $HOME/.msf_default
-if [ $msfl = "1" ]
+echo -e "$bgy $bl Welcome to T-Load. This must be your first use or the required files must have been deleted. So please wait untill all the required files have been setup.$rt"
+echo ""
+echo "Press enter to continue"
+read garbage
+
+fi
+
+###############################
+## Create .msf_defult folder ##
+###############################
+if [ ! -d $HOME/.skstool ]
 then
-echo '#!/data/data/com.termux/files/usr/bin/expect -f
-source /data/data/com.termux/files/home/.msf_default/port
-source /data/data/com.termux/files/home/.msf_default/host
-source /data/data/com.termux/files/home/.msf_default/exploit
-source /data/data/com.termux/files/home/.msf_default/payload
-spawn msfconsole
-expect "msf > "
-send "use $exploit \r"
-expect "msf exploit(handler) > "
-send "set payload $payload \r"
-expect "msf exploit(handler) > "
-send "set lhost $lhostused \r"
-expect "msf exploit(handler) > "
-send " set lport $lportused \r"
-expect "msf exploit(handler) > "
-send "exploit \r"
-interact' >> $HOME/.msf_default/msfload
-fi
-cd $HOME/T-Load
-chmod +x $HOME/.msf_default/msfload
-chmod +x embed
-chmod +x pfs
-chmod 600 key
-chmod 600 pfskey
-chmod +x redownload
-touch $HOME/.msf_default/pay
-touch $HOME/.msf_default/port
-touch $HOME/.msf_default/port
-touch $HOME/.msf_default/host
-touch $HOME/.msf_default/payload
-touch $HOME/.msf_default/exploit
-ln -s $HOME/T-Load/tload /data/data/com.termux/files/usr/bin/tload
-chmod +x /data/data/com.termux/files/usr/bin/tload
-
+mkdir $HOME/.skstool
 fi
 
-cd $HOME/T-Load
-chmod +x $HOME/.msf_default/msfload
-chmod +x embed
-chmod +x pfs
-chmod +x updates
+######################
+## Install Packages ##
+######################
+if [ "$OS" == "1" ]
+then
+echo -e "$gr Openssh is installed $rt"
+else
+echo "Installing openssh"
+sleep 2
+pkg install openssh -y
+fi
+if [ "$SP" == "1" ]
+then
+echo -e "$gr Sshpass is installed $rt"
+else
+echo "Installing sshpass"
+sleep 2
+pkg install sshpass -y
+fi
+if [ "$CU" == "1" ]
+then
+echo -e "$gr Curl is installed $rt"
+else
+echo "Installing Curl"
+sleep 2
+pkg install curl
+fi
+if [ "$RS" == "1" ]
+then
+echo -e "$gr Rsync is installed $rt"
+else
+echo "Installing Rsync"
+sleep 2
+pkg install rsync -y
+fi
+if [ "$EX" == "1" ]
+then
+echo -e "$gr Expect is installed $rt"
+else
+echo "Installing Expect"
+sleep 2
+apt-get install expect -y
+fi
+if [ "$NA" == "1" ]
+then
+echo -e "$gr Nano is installed $rt"
+else
+echo "Installing Nano"
+sleep 2
+pkg install nano -y
+fi
+
+############################
+## End of package install ##
+############################
+
+#################################
+## Check for files in .skstool ##
+#################################
+if [ ! -e $HOME/.skstool/pay ]
+then
+touch $HOME/.skstool/pay
+fi
+if [ ! -e $HOME/.skstool/updates ]
+then
+touch $HOME/.skstool/updates
+fi
+
+###############################
+## Set permisions for files  ##
+###############################
+cd $HOME/T-Load/
+chmod +x *
+chmod 600 psfkey
 chmod 600 key
-chmod 600 pfskey
-chmod +x redownload
-touch $HOME/.msf_default/pay
-touch $HOME/.msf_default/port
-touch $HOME/.msf_default/port
-touch $HOME/.msf_default/host
-touch $HOME/.msf_default/payload
-touch $HOME/.msf_default/exploit
-ln -s $HOME/T-Load/tload /data/data/com.termux/files/usr/bin/tload
-chmod +x /data/data/com.termux/files/usr/bin/tload
+
+######################################
+## Symlink test for executable file ##
+######################################
+if [ -e $PREFIX/bin/skstool ]
+then
+rm $PREFIX/bin/skstool
+fi
+ln -s skstool $PREFIX/bin/skstool
+
+######################
+## End of autosetup ##
+######################
+
 }
 if [ "${1}" == "run" ]
 then
+echo "Running setup on manual invoke"
+sleep 2
 setup
 elif [ "${1}" == "force" ]
 then
-##################
-## Java Install ##
-##################
+echo -e "$rd WARNING! $bgw Force installation is initiated."
+echo -e "$rd $bgw This may be unstable"
+echo -e "$rd $bgw Proceed at your own risk"
+echo -e "$rd $bgw This is untested by me"
+echo -e "$rd $bgw Press [enter] to continue or [ctrl + c] to exit $rt"
+read garbage 
+echo ""
+echo -e "$rd Force setup is initiated $rt"
+
+##########################
+## Start of force setup ##
+##########################
+
+########################
+## Force Install Java ##
+########################
 echo "Installing java"
 	echo ""
-	echo "Take a screcho -enshot if you find any error"
+	echo "Take a screenshot if you find any error"
 	echo ""
 	echo "Press enter to continue"
 	read garbage
@@ -215,7 +263,7 @@ echo "Installing java"
 	arm)
 		archname="arm" ;;
 	*)
-		echo -e "\e[91mERROR: Unknown architecture."; echo; echo"Unable to install java. Embeding payload offline will not work"; slecho -ep 5 ;;
+		echo -e "\e[91mERROR: Unknown architecture."; echo; echo "Unable to install java. Embeding payload offline will not work"; sleep 5; exit ;;
 	esac
 	echo -e "\e[32m[*] \e[34mDownloading JDK-8 (~70Mb) for ${archname}..."
 	wget https://github.com/Hax4us/java/releases/download/v8/jdk8_${archname}.tar.gz
@@ -231,15 +279,15 @@ echo "Installing java"
 	rm -rf $PREFIX/share/bin
 	echo
 	echo -e "\e[32mJava was successfully installed!\e[39m"
-	slecho -ep 3
+	sleep 3
 	echo
-
-####################
-## Apktool Install##
-####################
+	
+###########################
+## Force install Apktool ##
+###########################
 echo "Installing apktool"
 echo ""
-	echo "Take a screcho -enshot if you find any error"
+	echo "Take a screenshot if you find any error"
 	echo ""
 	echo "Press enter to continue"
 	read garbage
@@ -250,14 +298,14 @@ ln -s .files/apktool.jar $PREFIX/bin/apktool.jar
 chmod +x $PREFIX/bin/apktool*
 chmod +x $PREFIX/bin/aapt
 echo -e "\e[32mApktool was successfully installed!\e[39m"
-slecho -ep 5
+sleep 5
 
-######################
-## Zipalign Install ##
-######################
+############################
+## Force install zipalign ##
+############################
 echo "Installing  zipalign"
 echo ""
-	echo "Take a screcho -enshot if you find any error"
+	echo "Take a screenshot if you find any error"
 	echo ""
 	echo "Press enter to continue"
 	read garbage
@@ -265,9 +313,16 @@ echo ""
 ln -s .files/zipalign $PREFIX/bin/zipalign
 chmod +x $PREFIX/bin/zipalign
 echo -e "\e[32mZipalign was successfully installed!\e[39m"
-slecho -ep 5
-clear
-echo "Force Install was runned"
+sleep 5
+
+echo -e "$bgw $bl Force setup was ran $rt"
+echo "If you faced any errors, then please take a screen shot and post it in my forums along with log"
+echo ""
+echo "Press enter to exit"
+read garbage 
+exit 
+
 else
-echo "This setup will run automatically. Only run this in case of emergency"
+echo "This setup will run automatically along with skstool"
+echo -e "If you need to manually run then please use $bgw $bl setup run $rt command "
 fi
