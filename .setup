@@ -256,7 +256,7 @@ chmod 600 key
 ######################################
 if [ ! -f $PREFIX/bin/skstool ]
 then
-ln -s $HOME/T-Load/skstool $PREFIX/bin/skstool
+ln -s $HOME/T-Load/skstool $PREFIX/bin/skstool &> /dev/null
 fi
 
 
