@@ -1,25 +1,5 @@
 setup () {
 source $HOME/T-Load/.clr
-
-##Colors
-ul='\e[4m'
-bd='\e[1m'
-cn='\e[1;36m'
-wt='\e[39m'
-bk='\e[30m'
-gr='\e[1;32m'
-rd='\e[1;31m'
-yl='\e[1;33m'
-bl='\e[1;34m'
-pp='\e[1;35m'
-rt='\e[0m'
-bbl='\e[44m'
-bgy='\e[47m'
-bgr='\e[102m'
-bcn='\e[106m'
-bwt='\e[107m'
-##End Colors
-
 ###########################
 ## Remove existing tload ##
 ###########################
@@ -257,11 +237,11 @@ sleep 2
 setup
 elif [ "${1}" == "force" ]
 then
-echo -e "$rd WARNING! $bgw Force installation is initiated."
-echo -e "$rd $bgw This may be unstable"
-echo -e "$rd $bgw Proceed at your own risk"
-echo -e "$rd $bgw This is untested by me"
-echo -e "$rd $bgw Press [enter] to continue or [ctrl + c] to exit $rt"
+echo -e "$rd WARNING! $bwt Force installation is initiated."
+echo -e "$rd $bwt This may be unstable"
+echo -e "$rd $bwt Proceed at your own risk"
+echo -e "$rd $bwt This is untested by me"
+echo -e "$rd $bwt Press [enter] to continue or [ctrl + c] to exit $rt"
 read garbage 
 echo ""
 echo -e "$rd Force setup is initiated $rt"
@@ -343,7 +323,7 @@ chmod +x $PREFIX/bin/zipalign
 echo -e "\e[32mZipalign was successfully installed!\e[39m"
 sleep 5
 
-echo -e "$bgw $bl Force setup was ran $rt"
+echo -e "$bwt $bl Force setup was ran $rt"
 echo "If you faced any errors, then please take a screen shot and post it in my forums along with log"
 echo ""
 echo "Press enter to exit"
@@ -352,5 +332,5 @@ exit
 
 else
 echo "This setup will run automatically along with skstool"
-echo -e "If you need to manually run then please use $bgw $bl setup run $rt command "
+echo -e "If you need to manually run then please use $bwt $bl setup run $rt command "
 fi
