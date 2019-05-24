@@ -1,5 +1,22 @@
 setup () {
 source $HOME/T-Load/.clr
+
+###################
+## Modify apk.rb ##
+###################
+
+## Backup default apk.rb and copy custom apk.rb
+if [ -e $HOME/metasploit-framework/lib/msf/core/payload/apk.rb ]
+then
+mv $HOME/metasploit-framework/lib/msf/core/payload/apk.rb $HOME/metasploit-framework/lib/msf/core/payload/apk.rb.default.back
+cp $HOME/T-Load/.files/apk.rb $HOME/metasploit-framework/lib/msf/core/payload/apk.rb
+fi
+if [ -e $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb ]
+then
+mv $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb.default.back
+cp $HOME/T-Load/.files/apk.rb $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb
+fi
+
 ###########################
 ## Remove existing tload ##
 ###########################
