@@ -30,6 +30,12 @@ fi
 ###############################
 if [ -e $HOME/tload ]
 then
+echo -e "$rd You cannot launch T-Load by typing tload"
+echo -e "$rd The new shortcut for quick launch is skstool"
+echo -e "$rd I repeat type skstool to open T-Load $rt"
+echo ""
+echo "Press enter to continue"
+read garbage
 rm $HOME/tload
 fi
 
