@@ -346,9 +346,9 @@ echo ""
 	echo "Press enter to continue"
 	read garbage
 	clear
-ln -s .files/aapt $PREFIX/bin/
-ln -s .files/apktool $PREFIX/bin/apktool
-ln -s .files/apktool.jar $PREFIX/bin/apktool.jar
+ln -s $HOME/T-Load/.files/aapt $PREFIX/bin/
+ln -s $HOME/T-Load/.files/apktool $PREFIX/bin/apktool
+ln -s $HOME/T-Load/.files/apktool.jar $PREFIX/bin/apktool.jar
 chmod +x $PREFIX/bin/apktool*
 chmod +x $PREFIX/bin/aapt
 echo -e "\e[32mApktool was successfully installed!\e[39m"
