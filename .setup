@@ -99,7 +99,7 @@ fi
 #####################
 ## Apktool Install ##
 #####################
-if [ ! -e $PREFIX/bin/apktool ]
+if [ ! -f $PREFIX/bin/apktool ]
 then
 echo "Installing apktool"
 echo ""
@@ -119,7 +119,7 @@ fi
 #########################
 ## Apktool.jar copy ##
 #########################
-if [ ! -e $PREFIX/bin/apktool.jar ]
+if [ ! -f $PREFIX/bin/apktool.jar ]
 then
 echo "Copying apktool.jar"
 echo ""
@@ -139,7 +139,7 @@ fi
 ##################
 ## Aapt Install ##
 ##################
-if [ ! -e $PREFIX/bin/aapt ]
+if [ ! -f $PREFIX/bin/aapt ]
 then
 echo "Installing aapt"
 echo ""
@@ -160,7 +160,7 @@ fi
 ## Install Zipalign ##
 ######################
 
-if [ ! -e $PREFIX/bin/zipalign ]
+if [ ! -f $PREFIX/bin/zipalign ]
 then
 echo "Installing  zipalign"
 echo ""
@@ -271,11 +271,11 @@ fi
 ######################################
 ## Check for files in .skstool_data ##
 ######################################
-if [ ! -e $HOME/.skstool_data/pay ]
+if [ ! -f $HOME/.skstool_data/pay ]
 then
 touch $HOME/.skstool_data/pay
 fi
-if [ ! -e $HOME/.skstool_data/updates ]
+if [ ! -f $HOME/.skstool_data/updates ]
 then
 touch $HOME/.skstool_data/updates
 fi
