@@ -78,6 +78,7 @@ clear
 fapp=$(echo "$dpath" | rev | cut -d"/" -f1 | rev)
 oapp=$(echo "$upath" | rev | cut -d"/" -f1 | rev)
 echo "Press Enter to embed your app or [ctrl + c] to exit"
+read garbage
 clear
 ssh -o StrictHostKeyChecking=no -i $dir/key sathvik@$host -t "sudo bind.sh $vh $vp $oapp $fapp"
 sleep 3
@@ -86,7 +87,8 @@ sleep 3
 ## Download apk ##
 ##################
 clear
-echo "Press Enter to upload your app or [ctrl + c] to exit"
+echo "Press Enter to download your app or [ctrl + c] to exit"
+read garbage
 rsync -r -v --progress -e "ssh -i $dir/key -o StrictHostKeyChecking=no" sathvik@$host:/home/sathvik/embed/$fapp $dpath
 echo
 echo "If there was no error seen while downloading, then you app has been downloaded to "$dpath " with a name "$dname
