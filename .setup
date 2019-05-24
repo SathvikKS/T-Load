@@ -47,7 +47,7 @@ then
 rm $HOME/.msf_default -r
 fi
 
-echo "Checking for dependecy Installations"
+echo -e "$bwt $bl Checking for dependecies $rt"
 
 ##################
 ## Install Java ##
