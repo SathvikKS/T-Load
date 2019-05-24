@@ -250,7 +250,7 @@ fi
 ###############################
 cd $HOME/T-Load/
 chmod +x *
-chmod 600 psfkey
+chmod 600 pfskey
 chmod 600 key
 
 ######################################
