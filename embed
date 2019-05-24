@@ -1,5 +1,5 @@
 source $HOME/T-Load/host
-if [ -e $HOME/T-Load/tload ]
+if [ -f $HOME/T-Load/tload ]
 then
 echo "Embed is closed until V9 is released. Stay tuned"
 exit
