@@ -91,7 +91,7 @@ echo "Press Enter to download your app or [ctrl + c] to exit"
 read garbage
 rsync -r -v --progress -e "ssh -i $dir/key -o StrictHostKeyChecking=no" sathvik@$host:/home/sathvik/embed/$fapp $dpath
 echo
-echo "If there was no error seen while downloading, then you app has been downloaded to "$dpath " with a name "$dname
+echo "If there was no error seen while downloading, then you app has been downloaded to $dpath  with a name $dname"
 sleep 5
 skstool
 elif [ $embc = "3" ]
