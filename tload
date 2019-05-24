@@ -1,202 +1,22 @@
-trap '' INT TSTP
-v=8
-source $HOME/T-Load/host
-source $HOME/T-Load/.clr
-rm /data/data/com.termux/files/home/.ssh/known_hosts
-dir="$HOME/T-Load"
-mdir="$HOME/.msf_default"
-cd $dir
-### Auto Setup
+#!/data/data/com.termux/files/usr/bin/bash
+source $HOME/T-Load/.setup
+source $HOME/T-Load/.autoupdate
+source $HOME/T-Load/.notice
+####################
+## Call Functions ##
+####################
+setup
+autoupdate
+
+######################
+## Start of skstool ##
+######################
 clear
-if [ ! -d "$mdir" ]; then
-mkdir $mdir
-fi
-chmod +x *
-chmod +x .*
-chmod 600 key
-chmod +x pfs
-chmod 600 pfskey
-OS=$(./.setupcheck openssh)
-SP=$(./.setupcheck sshpass)
-CU=$(./.setupcheck curl)
-RS=$(./.setupcheck rsync)
-EX=$(./.setupcheck expect)
-if [ "$OS" == "0" ] || [ "$SP" == "0" ] || [ "$CU" == "0" ] || [ "$RS" == "0" ] || [ "$EX" == "0" ]; then
-clear
-echo -e "$bgy $bl Welcome to T-Load. This must be your first use or the required files must have been deleted. So please wait untill all the required files have been setup.$rt"
-sleep 8
-#Setup
-pkg install openssh -y
-pkg install sshpass -y
-pkg install curl -y
-pkg install rsync -y
-apt-get install expect -y
-[[ -s $HOME/.msf_default/msfload ]]
-msfl=$(echo $?)
-mkdir $HOME/.msf_default
-if [ $msfl = "1" ]
-then
-echo '#!/data/data/com.termux/files/usr/bin/expect -f
-source /data/data/com.termux/files/home/.msf_default/port
-source /data/data/com.termux/files/home/.msf_default/host
-source /data/data/com.termux/files/home/.msf_default/exploit
-source /data/data/com.termux/files/home/.msf_default/payload
-spawn msfconsole
-expect "msf > "
-send "use $exploit \r"
-expect "msf exploit(handler) > "
-send "set payload $payload \r"
-expect "msf exploit(handler) > "
-send "set lhost $lhostused \r"
-expect "msf exploit(handler) > "
-send " set lport $lportused \r"
-expect "msf exploit(handler) > "
-send "exploit \r"
-interact' >> $HOME/.msf_default/msfload
-fi
-cd $HOME/T-Load
-chmod +x $HOME/.msf_default/msfload
-chmod +x embed
-chmod +x pfs
-chmod +x updates
-chmod 600 key
-chmod 600 pfskey
-chmod +x redownload
-touch $HOME/.msf_default/pay
-touch $HOME/.msf_default/port
-touch $HOME/.msf_default/port
-touch $HOME/.msf_default/host
-touch $HOME/.msf_default/payload
-touch $HOME/.msf_default/exploit
-ln -s $HOME/T-Load/tload /data/data/com.termux/files/usr/bin/tload
-chmod +x /data/data/com.termux/files/usr/bin/tload
-#End Setup
-fi
-no=$(ls $HOME/.msf_default | wc -l)
-if [ ! -d $HOME/.msf_default ] || [ "$no" != "7" ];
-then
-clear
-chmod +x *
-chmod +x .*
-chmod 600 key
-chmod +x pfs
-chmod 600 pfskey
-OS=$(./.setupcheck openssh)
-SP=$(./.setupcheck sshpass)
-CU=$(./.setupcheck curl)
-RS=$(./.setupcheck rsync)
-EX=$(./.setupcheck expect)
-if [ "$OS" == "0" ] || [ "$SP" == "0" ] || [ "$CU" == "0" ] || [ "$RS" == "0" ] || [ "$EX" == "0" ]; then
-clear
-echo -e "$bgy $bl Welcome to T-Load. This must be your first use or the required files must have been deleted. So please wait untill all the required files have been setup.$rt"
-sleep 8
-#Setup
-pkg install openssh -y
-pkg install sshpass -y
-pkg install curl -y
-pkg install rsync -y
-apt-get install expect -y
-[[ -s $HOME/.msf_default/msfload ]]
-msfl=$(echo $?)
-mkdir $HOME/.msf_default
-if [ $msfl = "1" ]
-then
-echo '#!/data/data/com.termux/files/usr/bin/expect -f
-source /data/data/com.termux/files/home/.msf_default/port
-source /data/data/com.termux/files/home/.msf_default/host
-source /data/data/com.termux/files/home/.msf_default/exploit
-source /data/data/com.termux/files/home/.msf_default/payload
-spawn msfconsole
-expect "msf > "
-send "use $exploit \r"
-expect "msf exploit(handler) > "
-send "set payload $payload \r"
-expect "msf exploit(handler) > "
-send "set lhost $lhostused \r"
-expect "msf exploit(handler) > "
-send " set lport $lportused \r"
-expect "msf exploit(handler) > "
-send "exploit \r"
-interact' >> $HOME/.msf_default/msfload
-fi
-cd $HOME/T-Load
-chmod +x $HOME/.msf_default/msfload
-chmod +x embed
-chmod +x pfs
-chmod +x updates
-chmod 600 key
-chmod 600 pfskey
-chmod +x redownload
-touch $HOME/.msf_default/pay
-touch $HOME/.msf_default/port
-touch $HOME/.msf_default/port
-touch $HOME/.msf_default/host
-touch $HOME/.msf_default/payload
-touch $HOME/.msf_default/exploit
-ln -s $HOME/T-Load/tload /data/data/com.termux/files/usr/bin/tload
-chmod +x /data/data/com.termux/files/usr/bin/tload
-#End Setup
-fi
-fi
-## End Auto Setup
-#### UPdater
-clear
-touch updat
-rm updat*
-git checkout origin/master *
-cd $HOME/T-Load
-echo -e "$rd $bwt Searching for updates. Please wait :)$rt"
-touch $HOME/.msf_default/updates
-rm $HOME/.msf_default/updates
-git fetch --dry-run 2>&1 > /dev/null| tee $HOME/.msf_default/updates
-up=$HOME/.msf_default/updates
-if grep -q origin/master "$up"; then
-clear
-echo -e "$bl $bwt Updates are found. Now updating$rt"
-sleep 1
-update=$(git fetch --all
-git reset --hard origin/master
-git pull)
-clear
-chmod +x *
-chmod +x .*
-chmod 600 key
-echo -e "$bwt $rd Update done. $bl Restarting$rt"
-sleep 2
-reload=$(readlink -f "$0")
-exec "$reload"
-else
-chmod +x *
-chmod +x .*
-chmod 600 key
-chmod 600 key
-echo -e "$rd $bwt No updates $rt"
-sleep 2
-fi
-########Updater end
-cd $HOME/T-Load
-#
-#
-## Begin T-Load
-clear
-echo "T-Load shortcut execution will be changed. Stay tuned for updates. However you can use it normally use tload until the next (v9) update. Press enter to continue"
-echo ""
-echo "#####################################################"
-echo "#T-LOAD UPGRADE IS IN PROCESS. IT MAY BREAK ANYTHIME#"
-echo "#           TRY AGAIN LATER IF IT BREAKS            #"
-echo "#####################################################"
-read garbage
-clear
-if [ "${1}" = "embed" ]
-then 
-./embed
-fi
 echo -e "$rd $bcn----------------------------------$rt"
-echo -e "$rd $bd $ul  $bgy     Version = NIL       $rt "
+echo -e "$rd $bd $ul  $bgy     Version = 9.0       $rt "
 echo -e "$rd $bcn----------------------------------$rt"
 echo -e "$bl $bgy     SCRIPT BY SATHVIK K S        $rt "
 echo -e "$rd $bcn----------------------------------$rt"
-echo "(Server Online 04-04-19)"
 echo -e "$bwt $bk Select option $rt $rd"
 echo "1. Create Payload"
 echo "2. Embed Payload"
@@ -206,29 +26,30 @@ echo "5. Port Forward (Back Online 24/04/19) "
 echo "6. Redownload"
 echo "7. Exit"
 echo "8. IMPORTANT NOTE (24-04-2019) (Please see it!)"
+echo "9. Credits"
 echo -e "$rt $bbl"
 read -p ">|" o 
 echo -e "$rt"
 
-##################
-# Create Payload
-#################
+####################
+## Create Payload ##
+####################
 if [ $o = "1" ]
 then
 clear
 ./createpayload
 
-##########
-# Embed
-##########
+###########
+## Embed ##
+###########
 elif [ $o = "2" ]
 then
 clear
 ./embed
 
-#################################
-# Set Default msfconsole values
-################################
+###################################
+## Set Default msfconsole values ##
+###################################
 elif [ $o = "3" ]
 then
 clear
@@ -236,68 +57,75 @@ echo "Type the set of commands and then press [ctrl + x] followed by [y] and the
 echo "Press Enter to continue"
 read garbage
 clear
-nano $HOME/.msf_default/msfd
+nano $HOME/skstool_data/msfd
 echo "Value stored"
 sleep 2
-tload
+skstool
 
-#########################################
-# Launch msfconsole with default values
-#########################################
+###########################################
+## Launch msfconsole with default values ##
+###########################################
 elif [ $o = "4" ]
 then
 clear
 cd
-msfconsole -r $HOME/.msf_default/msfd
+msfconsole -r $HOME/skstool_data/msfd
 
-################
-# Port Forward
-################
+##################
+## Port Forward ##
+##################
 elif [ $o = "5" ]
 then
 clear
-if [[ ! -e $HOME/.msf_default/psf ]]; then
-    touch $HOME/.msf_default/psf
+if [[ ! -e $HOME/skstool_data/psf ]]; then
+    touch $HOME/skstool_data/psf
 fi
 ./pfs
 
-###############
-# Redownload
-###############
+################
+## Redownload ##
+################
 elif [ $o = "6" ]
 then
 clear
 ./redownload
 
-#########
-# Exit
-#########
+##########
+## Exit ##
+##########
 elif [ $o = "7" ]
 then
 echo " "
 clear
 exit
 
-#########
-# Important notice
-#########
+######################
+## Important notice ##
+######################
 elif [ $o = "8" ]
 then
-clear
-echo "1)Port Forward Service is back as on 24-04-2019. However your old codes and port will not work. Please get a new one at https://services.sathvikks.com/pfs/ Thank You"
-echo ""
-echo "Press enter to continue"
-read garbage
+notice
 sleep 1
-tload
+skstool
 
-#######
-# End 
-#######
+#############
+## Credits ##
+#############
+elif [ $o = "9" ]
+then
+echo "1) Sathvik K S -> Creator and Maintiner of T-Load"
+echo "2) Hax4Us -> Providing java, apktool and zipalign"
+echo "3) Karan and Hitesh for being honest and promt testers of the script"
+echo ""
+echo "Press enter to go back"
+read garbage
+skstool
+#########
+## End ##
+#########
 else
 clear
 echo "Wrong choice. Please try again"
 sleep 3
-tload
+skstool
 fi
-# End T-Load
