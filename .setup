@@ -55,7 +55,7 @@ echo -e "$bwt $bl Checking for dependecies $rt"
 
 if [ -f $PREFIX/bin/java ]
 then
-echo -e "\e[1;32m Apktool is installed \e[0m"
+echo -e "\e[1;32m Java is installed \e[0m"
 else
     echo "Installing java"
 	echo ""
@@ -100,6 +100,7 @@ fi
 #####################
 if [ ! -f $PREFIX/bin/apktool ]
 then
+echo ""
 echo "Installing apktool"
 echo ""
 echo "Take a screenshot if you find any error"
@@ -114,9 +115,9 @@ else
 echo -e "\e[1;32m Apktool is installed \e[0m"
 fi
 
-#########################
+######################
 ## Apktool.jar copy ##
-#########################
+######################
 if [ ! -f $PREFIX/bin/apktool.jar ]
 then
 echo "Copying apktool.jar"
@@ -138,6 +139,7 @@ fi
 ##################
 if [ ! -f $PREFIX/bin/aapt ]
 then
+echo ""
 echo "Installing aapt"
 echo ""
 echo "Take a screenshot if you find any error"
@@ -158,6 +160,7 @@ fi
 
 if [ ! -f $PREFIX/bin/zipalign ]
 then
+echo ""
 echo "Installing  zipalign"
 echo ""
 	echo "Take a screenshot if you find any error"
@@ -190,7 +193,6 @@ echo -e "\e[47m \e[1;34m Welcome to T-Load. This must be your first use or the r
 echo ""
 echo "Press enter to continue"
 read garbage
-clear
 fi
 
 ######################################
