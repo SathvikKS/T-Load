@@ -368,6 +368,15 @@ chmod +x $PREFIX/bin/zipalign
 echo -e "\e[32mZipalign was successfully installed!\e[39m"
 sleep 5
 
+##########################
+## Force resest skstool ##
+##########################
+if [ -e $PREFIX/bin/skstool ]
+then
+rm $PREFIX/bin/skstool
+ln -s $HOME/T-Load/skstool $PREFIX/bin/skstool
+fi
+
 echo -e "\e[107m \e[1;34m Force setup was ran \e[0m"
 echo "If you faced any errors, then please take a screen shot and post it in my forums along with log"
 echo ""
