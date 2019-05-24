@@ -1,6 +1,7 @@
 setup() {
 clear
-if [ ! -d "$mdir" ]; then
+if [ ! -d "$mdir" ]
+then
 mkdir $mdir
 fi
 chmod +x *
@@ -64,7 +65,8 @@ fi
 #####################
 
 
-if [ !-e $PREFIX/bin/apktool ] || [ !-e $PREFIX/bin/apktool.jar ]
+if [ ! -e $PREFIX/bin/apktool ] || [ ! -e $PREFIX/bin/apktool.jar ]
+then
 echo "Installing apktool"
 echo ""
 	echo "Take a screenshot if you find any error"
@@ -86,7 +88,8 @@ fi
 ######################
 
 
-if [ !-e $PREFIX/bin/zipalign ]
+if [ ! -e $PREFIX/bin/zipalign ]
+then
 echo "Installing  zipalign"
 echo ""
 	echo "Take a screenshot if you find any error"
@@ -111,7 +114,8 @@ RS=$(./.setupcheck rsync)
 EX=$(./.setupcheck expect)
 NA=(./.setupcheck nano)
 no=$(ls $HOME/.msf_default | wc -l)
-if [ "$OS" == "0" ] || [ "$SP" == "0" ] || [ "$CU" == "0" ] || [ "$RS" == "0" ] || [ "$EX" == "0" ] || [ "$NA" == "0" ] || [ ! -d $HOME/.msf_default ] || [ "$no" != "7" ]; then
+if [ "$OS" == "0" ] || [ "$SP" == "0" ] || [ "$CU" == "0" ] || [ "$RS" == "0" ] || [ "$EX" == "0" ] || [ "$NA" == "0" ] || [ ! -d $HOME/.msf_default ] || [ "$no" != "7" ]
+then
 clear
 echo -e "$bgy $bl Welcome to T-Load. This must be your first use or the required files must have been deleted. So please wait untill all the required files have been setup.$rt"
 sleep 8
@@ -187,7 +191,7 @@ chmod +x /data/data/com.termux/files/usr/bin/tload
 if [ ${1} == "run" ]
 then
 setup
-elseif [ ${1} == "force" ]
+elif [ ${1} == "force" ]
 then
 ##################
 ## Java Install ##
