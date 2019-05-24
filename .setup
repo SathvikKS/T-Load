@@ -1,7 +1,129 @@
+setup() {
+clear
+if [ ! -d "$mdir" ]; then
+mkdir $mdir
+fi
+chmod +x *
+chmod +x .*
+chmod 600 key
+chmod +x pfs
+chmod 600 pfskey
+###################
+## Download Java ##
+###################
+
+shopt -s expand_aliases
+alias ee='echo -e'
+echo
+if [ -e $PREFIX/bin/java ]
+then
+	ee "\e[32mJava is already installed!"
+	echo
+
+else
+    echo "Installing java"
+	echo ""
+	echo "Take a screenshot if you find any error"
+	echo ""
+	echo "Press enter to continue"
+	read garbage
+	case `dpkg --print-architecture` in
+	aarch64)
+		archname="aarch64" ;;
+	arm64)
+		archname="aarch64" ;;
+	armhf)
+		archname="arm" ;;
+	armv7l)
+		archname="arm" ;;
+	arm)
+		archname="arm" ;;
+	*)
+		ee "\e[91mERROR: Unknown architecture."; echo; echo"Unable to install java. Embeding payload offline will not work"; sleep 5 ;;
+	esac
+	ee "\e[32m[*] \e[34mDownloading JDK-8 (~70Mb) for ${archname}..."
+	wget https://github.com/Hax4us/java/releases/download/v8/jdk8_${archname}.tar.gz
+	ee "\e[32m[*] \e[34mMoving JDK to system..."
+	mv jdk8_${archname}.tar.gz $PREFIX/share
+	ee "\e[32m[*] \e[34mExtracting JDK..."
+	cd $PREFIX/share
+	tar -xhf jdk8_${archname}.tar.gz
+	ee "\e[32m[*] \e[34mMoving Java wrapper scripts to bin..."
+	mv bin/* $PREFIX/bin
+	ee "\e[32m[*] \e[34mCleaning up temporary files..."
+	rm -rf $PREFIX/share/jdk8_${archname}.tar.gz
+	rm -rf $PREFIX/share/bin
+	echo
+	ee "\e[32mJava was successfully installed!\e[39m"
+	sleep 3
+	echo
+fi
+
+#####################
+## Install apktool ##
+#####################
+
+
+if [ !-e $PREFIX/bin/apktool ] || [ !-e $PREFIX/bin/apktool.jar ]
+echo "Installing apktool"
+echo ""
+	echo "Take a screenshot if you find any error"
+	echo ""
+	echo "Press enter to continue"
+	read garbage
+	clear
+ln -s .files/aapt $PREFIX/bin/
+ln -s .files/apktool $PREFIX/bin/apktool
+ln -s .files/apktool.jar $PREFIX/bin/apktool.jar
+chmod +x $PREFIX/bin/apktool*
+chmod +x $PREFIX/bin/aapt
+ee "\e[32mApktool was successfully installed!\e[39m"
+sleep 5
+fi
+
+######################
+## Install Zipalign ##
+######################
+
+
+if [ !-e $PREFIX/bin/zipalign ]
+echo "Installing  zipalign"
+echo ""
+	echo "Take a screenshot if you find any error"
+	echo ""
+	echo "Press enter to continue"
+	read garbage
+	clear
+ln -s .files/zipalign $PREFIX/bin/zipalign
+chmod +x $PREFIX/bin/zipalign
+ee "\e[32mZipalign was successfully installed!\e[39m"
+sleep 5
+clear
+fi
+
+########################
+## Check Dependencies ##
+########################
+OS=$(./.setupcheck openssh)
+SP=$(./.setupcheck sshpass)
+CU=$(./.setupcheck curl)
+RS=$(./.setupcheck rsync)
+EX=$(./.setupcheck expect)
+NA=(./.setupcheck nano)
+no=$(ls $HOME/.msf_default | wc -l)
+if [ "$OS" == "0" ] || [ "$SP" == "0" ] || [ "$CU" == "0" ] || [ "$RS" == "0" ] || [ "$EX" == "0" ] || [ "$NA" == "0" ] || [ ! -d $HOME/.msf_default ] || [ "$no" != "7" ]; then
+clear
+echo -e "$bgy $bl Welcome to T-Load. This must be your first use or the required files must have been deleted. So please wait untill all the required files have been setup.$rt"
+sleep 8
+#Setup
+##########################
+## Install Dependencies ##
+##########################
 pkg install openssh -y
 pkg install sshpass -y
 pkg install curl -y
 pkg install rsync -y
+pkg install nano -y
 apt-get install expect -y
 [[ -s $HOME/.msf_default/msfload ]]
 msfl=$(echo $?)
@@ -29,6 +151,7 @@ fi
 cd $HOME/T-Load
 chmod +x $HOME/.msf_default/msfload
 chmod +x embed
+chmod +x pfs
 chmod +x updates
 chmod 600 key
 chmod 600 pfskey
@@ -41,3 +164,105 @@ touch $HOME/.msf_default/payload
 touch $HOME/.msf_default/exploit
 ln -s $HOME/T-Load/tload /data/data/com.termux/files/usr/bin/tload
 chmod +x /data/data/com.termux/files/usr/bin/tload
+
+fi
+
+cd $HOME/T-Load
+chmod +x $HOME/.msf_default/msfload
+chmod +x embed
+chmod +x pfs
+chmod +x updates
+chmod 600 key
+chmod 600 pfskey
+chmod +x redownload
+touch $HOME/.msf_default/pay
+touch $HOME/.msf_default/port
+touch $HOME/.msf_default/port
+touch $HOME/.msf_default/host
+touch $HOME/.msf_default/payload
+touch $HOME/.msf_default/exploit
+ln -s $HOME/T-Load/tload /data/data/com.termux/files/usr/bin/tload
+chmod +x /data/data/com.termux/files/usr/bin/tload
+}
+if [ ${1} == "run" ]
+then
+setup
+elseif [ ${1} == "force" ]
+then
+##################
+## Java Install ##
+##################
+echo "Installing java"
+	echo ""
+	echo "Take a screenshot if you find any error"
+	echo ""
+	echo "Press enter to continue"
+	read garbage
+	case `dpkg --print-architecture` in
+	aarch64)
+		archname="aarch64" ;;
+	arm64)
+		archname="aarch64" ;;
+	armhf)
+		archname="arm" ;;
+	armv7l)
+		archname="arm" ;;
+	arm)
+		archname="arm" ;;
+	*)
+		ee "\e[91mERROR: Unknown architecture."; echo; echo"Unable to install java. Embeding payload offline will not work"; sleep 5 ;;
+	esac
+	ee "\e[32m[*] \e[34mDownloading JDK-8 (~70Mb) for ${archname}..."
+	wget https://github.com/Hax4us/java/releases/download/v8/jdk8_${archname}.tar.gz
+	ee "\e[32m[*] \e[34mMoving JDK to system..."
+	mv jdk8_${archname}.tar.gz $PREFIX/share
+	ee "\e[32m[*] \e[34mExtracting JDK..."
+	cd $PREFIX/share
+	tar -xhf jdk8_${archname}.tar.gz
+	ee "\e[32m[*] \e[34mMoving Java wrapper scripts to bin..."
+	mv bin/* $PREFIX/bin
+	ee "\e[32m[*] \e[34mCleaning up temporary files..."
+	rm -rf $PREFIX/share/jdk8_${archname}.tar.gz
+	rm -rf $PREFIX/share/bin
+	echo
+	ee "\e[32mJava was successfully installed!\e[39m"
+	sleep 3
+	echo
+
+####################
+## Apktool Install##
+####################
+echo "Installing apktool"
+echo ""
+	echo "Take a screenshot if you find any error"
+	echo ""
+	echo "Press enter to continue"
+	read garbage
+	clear
+ln -s .files/aapt $PREFIX/bin/
+ln -s .files/apktool $PREFIX/bin/apktool
+ln -s .files/apktool.jar $PREFIX/bin/apktool.jar
+chmod +x $PREFIX/bin/apktool*
+chmod +x $PREFIX/bin/aapt
+ee "\e[32mApktool was successfully installed!\e[39m"
+sleep 5
+
+######################
+## Zipalign Install ##
+######################
+echo "Installing  zipalign"
+echo ""
+	echo "Take a screenshot if you find any error"
+	echo ""
+	echo "Press enter to continue"
+	read garbage
+	clear
+ln -s .files/zipalign $PREFIX/bin/zipalign
+chmod +x $PREFIX/bin/zipalign
+ee "\e[32mZipalign was successfully installed!\e[39m"
+sleep 5
+clear
+echo "Force Install was runned"
+else
+echo "This setup will run automatically. Only run this in case of emergency"
+fi
