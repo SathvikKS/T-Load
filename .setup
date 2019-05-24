@@ -346,7 +346,7 @@ echo ""
 	echo "Press enter to continue"
 	read garbage
 	clear
-ln -s $HOME/T-Load/.files/aapt $PREFIX/bin/
+ln -s $HOME/T-Load/.files/aapt $PREFIX/bin/aapt
 ln -s $HOME/T-Load/.files/apktool $PREFIX/bin/apktool
 ln -s $HOME/T-Load/.files/apktool.jar $PREFIX/bin/apktool.jar
 chmod +x $PREFIX/bin/apktool*
