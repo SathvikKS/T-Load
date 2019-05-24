@@ -254,9 +254,9 @@ chmod 600 key
 ######################################
 ## Symlink test for executable file ##
 ######################################
-if [ ! -e $PREFIX/bin/skstool ]
+if [ ! -f $PREFIX/bin/skstool ]
 then
-ln -s skstool $PREFIX/bin/skstool
+ln -s $HOME/T-Load/skstool $PREFIX/bin/skstool
 fi
 
 
