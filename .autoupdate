@@ -1,0 +1,40 @@
+autoupdate () {
+source $HOME/T-Load/.clr
+clear
+git checkout origin/master *
+cd $HOME/T-Load
+echo -e "$rd $bwt Searching for updates. Please wait :)$rt"
+touch $HOME/.msf_default/updates
+rm $HOME/.msf_default/updates
+git fetch --dry-run 2>&1 > /dev/null| tee $HOME/.msf_default/updates
+up=$HOME/.msf_default/updates
+if grep -q origin/master "$up"; then
+clear
+echo -e "$bl $bwt Updates are found. Now updating$rt"
+sleep 1
+update=$(git fetch --all
+git reset --hard origin/master
+git pull)
+clear
+chmod +x *
+chmod +x .*
+chmod 600 key
+echo -e "$bwt $rd Update done. $bl Restarting$rt"
+sleep 2
+reload=$(readlink -f "$0")
+exec "$reload"
+else
+chmod +x *
+chmod +x .*
+chmod 600 key
+chmod 600 key
+echo -e "$rd $bwt No updates are found$rt"
+sleep 2
+fi
+}
+if [ "${1}" == "run" ]
+then
+setup
+else
+echo "This updater will run automatically. Only run this in case of emergency"
+fi
