@@ -75,6 +75,8 @@ sleep 3
 ## Embed ##
 ###########
 clear
+fapp=$(echo "$dpath" | rev | cut -d"/" -f1 | rev)
+oapp=$(echo "$upath" | rev | cut -d"/" -f1 | rev)
 echo "Press Enter to embed your app or [ctrl + c] to exit"
 clear
 ssh -o StrictHostKeyChecking=no -i $dir/key sathvik@$host -t "sudo bind.sh $vh $vp $oapp $fapp"
