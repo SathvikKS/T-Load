@@ -332,5 +332,5 @@ exit
 
 else
 echo "This setup will run automatically along with skstool"
-echo -e "If you need to manually run then please use \e[107m \e[1;34m setup run \e[0m command "
+echo -e "If you need to manually run then please use \e[107m\e[1;34m setup run \e[0m command "
 fi
