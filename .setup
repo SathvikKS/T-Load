@@ -57,7 +57,6 @@ if [ -f $PREFIX/bin/java ]
 then
 echo -e "\e[1;32m Apktool is installed \e[0m"
 else
-clear
     echo "Installing java"
 	echo ""
 	echo "Take a screenshot if you find any error"
@@ -107,7 +106,6 @@ echo "Take a screenshot if you find any error"
 echo ""
 echo "Press enter to continue"
 read garbage
-clear
 ln -s $HOME/T-Load/.files/apktool $PREFIX/bin/apktool
 chmod +x $PREFIX/bin/apktool
 echo -e "\e[32mApktool was successfully installed!\e[39m"
@@ -127,7 +125,6 @@ echo "Take a screenshot if you find any error"
 echo ""
 echo "Press enter to continue"
 read garbage
-clear
 ln -s $HOME/T-Load/.files/apktool.jar $PREFIX/bin/apktool.jar
 chmod +x $PREFIX/bin/apktool.jar
 echo -e "\e[32mApktool.jar was successfully copied!\e[39m"
@@ -147,7 +144,6 @@ echo "Take a screenshot if you find any error"
 echo ""
 echo "Press enter to continue"
 read garbage
-clear
 ln -s $HOME/T-Load/.files/aapt $PREFIX/bin/aapt
 chmod +x $PREFIX/bin/aapt
 echo -e "\e[32mAaptwas successfully installed!\e[39m"
@@ -168,7 +164,6 @@ echo ""
 	echo ""
 	echo "Press enter to continue"
 	read garbage
-	clear
 ln -s $HOME/T-Load/.files/zipalign $PREFIX/bin/zipalign
 chmod +x $PREFIX/bin/zipalign
 echo -e "\e[32mZipalign was successfully installed!\e[39m"
@@ -195,7 +190,7 @@ echo -e "\e[47m \e[1;34m Welcome to T-Load. This must be your first use or the r
 echo ""
 echo "Press enter to continue"
 read garbage
-
+clear
 fi
 
 ######################################
