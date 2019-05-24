@@ -335,6 +335,10 @@ if [ -e $PREFIX/bin/apktool.jar ]
 then
 rm $PREFIX/bin/apktool.jar
 fi
+if [ -e $PREFIX/bin/aapt ]
+then
+rm $PREFIX/bin/aapt
+fi
 echo "Installing apktool"
 echo ""
 	echo "Take a screenshot if you find any error"
