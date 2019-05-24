@@ -181,7 +181,7 @@ clear
 echo "T-Load shortcut execution will be changed. Stay tuned for updates. However you can use it normally use tload until the next (v9) update. Press enter to continue"
 echo ""
 echo "#####################################################"
-echo "#T-LOAD UPGRADE IS IN PROCESS. IT MAY BREAK ANYTHIME#
+echo "#T-LOAD UPGRADE IS IN PROCESS. IT MAY BREAK ANYTHIME#"
 echo "#           TRY AGAIN LATER IF IT BREAKS            #"
 echo "#####################################################"
 read garbage
