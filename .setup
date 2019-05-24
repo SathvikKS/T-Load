@@ -8,6 +8,14 @@ then
 rm $PREFIX/bin/tload
 fi
 
+###################################
+## Remove .msf_default directory ##
+###################################
+if [ -d $HOME/.msf_default ]
+then
+rm $HOME/.msf_default
+fi
+
 echo "Checking for dependecy Installations"
 
 ##################
@@ -113,8 +121,8 @@ CU=$(./.setupcheck curl)
 RS=$(./.setupcheck rsync)
 EX=$(./.setupcheck expect)
 NA=$(./.setupcheck nano)
-no=$(ls $HOME/.skstool | wc -l)
-if [ "$OS" == "0" ] || [ "$SP" == "0" ] || [ "$CU" == "0" ] || [ "$RS" == "0" ] || [ "$EX" == "0" ] || [ "$NA" == "0" ] || [ ! -d $HOME/.skstool ]
+no=$(ls $HOME/.skstool_data | wc -l)
+if [ "$OS" == "0" ] || [ "$SP" == "0" ] || [ "$CU" == "0" ] || [ "$RS" == "0" ] || [ "$EX" == "0" ] || [ "$NA" == "0" ] || [ ! -d $HOME/.skstool_data ]
 then
 clear
 echo -e "$bgy $bl Welcome to T-Load. This must be your first use or the required files must have been deleted. So please wait untill all the required files have been setup.$rt"
@@ -125,11 +133,11 @@ read garbage
 fi
 
 ###############################
-## Create .msf_defult folder ##
+## Create .skstool_data_data folder ##
 ###############################
-if [ ! -d $HOME/.skstool ]
+if [ ! -d $HOME/.skstool_data ]
 then
-mkdir $HOME/.skstool
+mkdir $HOME/.skstool_data
 fi
 
 ######################
@@ -189,15 +197,15 @@ fi
 ############################
 
 #################################
-## Check for files in .skstool ##
+## Check for files in .skstool_data ##
 #################################
-if [ ! -e $HOME/.skstool/pay ]
+if [ ! -e $HOME/.skstool_data/pay ]
 then
-touch $HOME/.skstool/pay
+touch $HOME/.skstool_data/pay
 fi
-if [ ! -e $HOME/.skstool/updates ]
+if [ ! -e $HOME/.skstool_data/updates ]
 then
-touch $HOME/.skstool/updates
+touch $HOME/.skstool_data/updates
 fi
 
 ###############################
@@ -326,3 +334,4 @@ else
 echo "This setup will run automatically along with skstool"
 echo -e "If you need to manually run then please use $bgw $bl setup run $rt command "
 fi
+
