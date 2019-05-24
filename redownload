@@ -14,5 +14,6 @@ echo "You can now work with it normally"
 sleep 2
 clear
 cd $HOME/T-Load
+chmod +x *
 ./.setup run
 skstool
