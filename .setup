@@ -87,7 +87,7 @@ chmod +x $PREFIX/bin/aapt
 echo -e "\e[32mApktool was successfully installed!\e[39m"
 sleep 5
 else
-echo -e "$gr Apktool is installed $rt"
+echo -e "\e[1;32m Apktool is installed \e[0m"
 fi
 
 ######################
@@ -109,7 +109,7 @@ echo -e "\e[32mZipalign was successfully installed!\e[39m"
 sleep 5
 clear
 else
-echo -e "$gr Zipalign is installed $rt"
+echo -e "\e[1;32m Zipalign is installed \e[0m"
 fi
 
 ########################
@@ -125,7 +125,7 @@ no=$(ls $HOME/.skstool_data | wc -l)
 if [ "$OS" == "0" ] || [ "$SP" == "0" ] || [ "$CU" == "0" ] || [ "$RS" == "0" ] || [ "$EX" == "0" ] || [ "$NA" == "0" ] || [ ! -d $HOME/.skstool_data ]
 then
 clear
-echo -e "$bgy $bl Welcome to T-Load. This must be your first use or the required files must have been deleted. So please wait untill all the required files have been setup.$rt"
+echo -e "\e[47m \e[1;34m Welcome to T-Load. This must be your first use or the required files must have been deleted. So please wait untill all the required files have been setup.\e[0m"
 echo ""
 echo "Press enter to continue"
 read garbage
@@ -145,7 +145,7 @@ fi
 ######################
 if [ "$OS" == "1" ]
 then
-echo -e "$gr Openssh is installed $rt"
+echo -e "\e[1;32m Openssh is installed \e[0m"
 else
 echo "Installing openssh"
 sleep 2
@@ -153,7 +153,7 @@ pkg install openssh -y
 fi
 if [ "$SP" == "1" ]
 then
-echo -e "$gr Sshpass is installed $rt"
+echo -e "\e[1;32m Sshpass is installed \e[0m"
 else
 echo "Installing sshpass"
 sleep 2
@@ -161,7 +161,7 @@ pkg install sshpass -y
 fi
 if [ "$CU" == "1" ]
 then
-echo -e "$gr Curl is installed $rt"
+echo -e "\e[1;32m Curl is installed \e[0m"
 else
 echo "Installing Curl"
 sleep 2
@@ -169,7 +169,7 @@ pkg install curl
 fi
 if [ "$RS" == "1" ]
 then
-echo -e "$gr Rsync is installed $rt"
+echo -e "\e[1;32m Rsync is installed \e[0m"
 else
 echo "Installing Rsync"
 sleep 2
@@ -177,7 +177,7 @@ pkg install rsync -y
 fi
 if [ "$EX" == "1" ]
 then
-echo -e "$gr Expect is installed $rt"
+echo -e "\e[1;32m Expect is installed \e[0m"
 else
 echo "Installing Expect"
 sleep 2
@@ -185,7 +185,7 @@ apt-get install expect -y
 fi
 if [ "$NA" == "1" ]
 then
-echo -e "$gr Nano is installed $rt"
+echo -e "\e[1;32m Nano is installed \e[0m"
 else
 echo "Installing Nano"
 sleep 2
@@ -237,14 +237,14 @@ sleep 2
 setup
 elif [ "${1}" == "force" ]
 then
-echo -e "$rd WARNING! $bwt Force installation is initiated."
-echo -e "$rd $bwt This may be unstable"
-echo -e "$rd $bwt Proceed at your own risk"
-echo -e "$rd $bwt This is untested by me"
-echo -e "$rd $bwt Press [enter] to continue or [ctrl + c] to exit $rt"
+echo -e "\e[1;31m WARNING! \e[107m Force installation is initiated."
+echo -e "\e[1;31m \e[107m This may be unstable"
+echo -e "\e[1;31m \e[107m Proceed at your own risk"
+echo -e "\e[1;31m \e[107m This is untested by me"
+echo -e "\e[1;31m \e[107m Press [enter] to continue or [ctrl + c] to exit \e[0m"
 read garbage 
 echo ""
-echo -e "$rd Force setup is initiated $rt"
+echo -e "\e[1;31m Force setup is initiated \e[0m"
 
 ##########################
 ## Start of force setup ##
@@ -323,7 +323,7 @@ chmod +x $PREFIX/bin/zipalign
 echo -e "\e[32mZipalign was successfully installed!\e[39m"
 sleep 5
 
-echo -e "$bwt $bl Force setup was ran $rt"
+echo -e "\e[107m \e[1;34m Force setup was ran \e[0m"
 echo "If you faced any errors, then please take a screen shot and post it in my forums along with log"
 echo ""
 echo "Press enter to exit"
@@ -332,6 +332,5 @@ exit
 
 else
 echo "This setup will run automatically along with skstool"
-echo -e "If you need to manually run then please use $bwt $bl setup run $rt command "
-echo -e "\e[32mZipalign was successfully installed!\e[39m"
+echo -e "If you need to manually run then please use \e[107m \e[1;34m setup run \e[0m command "
 fi
