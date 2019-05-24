@@ -1,5 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
 cd $HOME/T-Load
+chmod +x .setupcheck
 chmod +x .setup
 chmod +x .autoupdate
 source $HOME/T-Load/.setup
