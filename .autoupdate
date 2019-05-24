@@ -1,4 +1,11 @@
 autoupdate () {
+######################################
+## Create .skstool_data_data folder ##
+######################################
+if [ ! -d $HOME/.skstool_data ]
+then
+mkdir $HOME/.skstool_data
+fi
 source $HOME/T-Load/.clr
 clear
 git checkout origin/master *
