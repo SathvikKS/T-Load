@@ -1,4 +1,5 @@
 trap '' INT TSTP
+v=8
 source $HOME/T-Load/host
 source $HOME/T-Load/.clr
 rm /data/data/com.termux/files/home/.ssh/known_hosts
