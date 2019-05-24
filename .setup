@@ -259,6 +259,7 @@ then
 rm $PREFIX/bin/skstool
 ln -s $HOME/T-Load/skstool $PREFIX/bin/skstool
 chmod +x $PREFIX/bin/skstool
+fi
 
 ######################
 ## End of autosetup ##
