@@ -1,5 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
 clear
+cd $HOME/T-Load
 source $HOME/T-Load/.setup 2>&1 > /dev/null
 source $HOME/T-Load/.autoupdate 2>&1 > /dev/null
 source $HOME/T-Load/.notice
