@@ -1,4 +1,8 @@
 setup() {
+if [ -e $PREFIX/bin/tload ]
+then
+rm $PREFIX/bin/tload
+fi
 clear
 mdir=$HOME/.msf_default
 if [ ! -d "$mdir" ]
@@ -14,18 +18,16 @@ chmod 600 pfskey
 ## Download Java ##
 ###################
 
-shopt -s expand_aliases
-alias ee='echo -e'
 echo
 if [ -e $PREFIX/bin/java ]
 then
-	ee "\e[32mJava is already installed!"
+	echo -e "\e[32mJava is already installed!"
 	echo
 
 else
     echo "Installing java"
 	echo ""
-	echo "Take a screenshot if you find any error"
+	echo "Take a screcho -enshot if you find any error"
 	echo ""
 	echo "Press enter to continue"
 	read garbage
@@ -41,23 +43,23 @@ else
 	arm)
 		archname="arm" ;;
 	*)
-		ee "\e[91mERROR: Unknown architecture."; echo; echo"Unable to install java. Embeding payload offline will not work"; sleep 5 ;;
+		echo -e "\e[91mERROR: Unknown architecture."; echo; echo"Unable to install java. Embeding payload offline will not work"; slecho -ep 5 ;;
 	esac
-	ee "\e[32m[*] \e[34mDownloading JDK-8 (~70Mb) for ${archname}..."
+	echo -e "\e[32m[*] \e[34mDownloading JDK-8 (~70Mb) for ${archname}..."
 	wget https://github.com/Hax4us/java/releases/download/v8/jdk8_${archname}.tar.gz
-	ee "\e[32m[*] \e[34mMoving JDK to system..."
+	echo -e "\e[32m[*] \e[34mMoving JDK to system..."
 	mv jdk8_${archname}.tar.gz $PREFIX/share
-	ee "\e[32m[*] \e[34mExtracting JDK..."
+	echo -e "\e[32m[*] \e[34mExtracting JDK..."
 	cd $PREFIX/share
 	tar -xhf jdk8_${archname}.tar.gz
-	ee "\e[32m[*] \e[34mMoving Java wrapper scripts to bin..."
+	echo -e "\e[32m[*] \e[34mMoving Java wrapper scripts to bin..."
 	mv bin/* $PREFIX/bin
-	ee "\e[32m[*] \e[34mCleaning up temporary files..."
+	echo -e "\e[32m[*] \e[34mCleaning up temporary files..."
 	rm -rf $PREFIX/share/jdk8_${archname}.tar.gz
 	rm -rf $PREFIX/share/bin
 	echo
-	ee "\e[32mJava was successfully installed!\e[39m"
-	sleep 3
+	echo -e "\e[32mJava was successfully installed!\e[39m"
+	slecho -ep 3
 	echo
 fi
 
@@ -70,7 +72,7 @@ if [ ! -e $PREFIX/bin/apktool ] || [ ! -e $PREFIX/bin/apktool.jar ]
 then
 echo "Installing apktool"
 echo ""
-	echo "Take a screenshot if you find any error"
+	echo "Take a screcho -enshot if you find any error"
 	echo ""
 	echo "Press enter to continue"
 	read garbage
@@ -80,8 +82,8 @@ ln -s .files/apktool $PREFIX/bin/apktool
 ln -s .files/apktool.jar $PREFIX/bin/apktool.jar
 chmod +x $PREFIX/bin/apktool*
 chmod +x $PREFIX/bin/aapt
-ee "\e[32mApktool was successfully installed!\e[39m"
-sleep 5
+echo -e "\e[32mApktool was successfully installed!\e[39m"
+slecho -ep 5
 fi
 
 ######################
@@ -93,15 +95,15 @@ if [ ! -e $PREFIX/bin/zipalign ]
 then
 echo "Installing  zipalign"
 echo ""
-	echo "Take a screenshot if you find any error"
+	echo "Take a screcho -enshot if you find any error"
 	echo ""
 	echo "Press enter to continue"
 	read garbage
 	clear
 ln -s .files/zipalign $PREFIX/bin/zipalign
 chmod +x $PREFIX/bin/zipalign
-ee "\e[32mZipalign was successfully installed!\e[39m"
-sleep 5
+echo -e "\e[32mZipalign was successfully installed!\e[39m"
+slecho -ep 5
 clear
 fi
 
@@ -118,8 +120,8 @@ no=$(ls $HOME/.msf_default | wc -l)
 if [ "$OS" == "0" ] || [ "$SP" == "0" ] || [ "$CU" == "0" ] || [ "$RS" == "0" ] || [ "$EX" == "0" ] || [ "$NA" == "0" ] || [ ! -d $HOME/.msf_default ] || [ "$no" != "7" ]
 then
 clear
-echo -e "$bgy $bl Welcome to T-Load. This must be your first use or the required files must have been deleted. So please wait untill all the required files have been setup.$rt"
-sleep 8
+echo -e "$bgy $bl Welcome to T-Load. This must be your first use or the required files must have becho -en deleted. So please wait untill all the required files have becho -en setup.$rt"
+slecho -ep 8
 #Setup
 ##########################
 ## Install Dependencies ##
@@ -157,7 +159,6 @@ cd $HOME/T-Load
 chmod +x $HOME/.msf_default/msfload
 chmod +x embed
 chmod +x pfs
-chmod +x updates
 chmod 600 key
 chmod 600 pfskey
 chmod +x redownload
@@ -199,7 +200,7 @@ then
 ##################
 echo "Installing java"
 	echo ""
-	echo "Take a screenshot if you find any error"
+	echo "Take a screcho -enshot if you find any error"
 	echo ""
 	echo "Press enter to continue"
 	read garbage
@@ -215,23 +216,23 @@ echo "Installing java"
 	arm)
 		archname="arm" ;;
 	*)
-		ee "\e[91mERROR: Unknown architecture."; echo; echo"Unable to install java. Embeding payload offline will not work"; sleep 5 ;;
+		echo -e "\e[91mERROR: Unknown architecture."; echo; echo"Unable to install java. Embeding payload offline will not work"; slecho -ep 5 ;;
 	esac
-	ee "\e[32m[*] \e[34mDownloading JDK-8 (~70Mb) for ${archname}..."
+	echo -e "\e[32m[*] \e[34mDownloading JDK-8 (~70Mb) for ${archname}..."
 	wget https://github.com/Hax4us/java/releases/download/v8/jdk8_${archname}.tar.gz
-	ee "\e[32m[*] \e[34mMoving JDK to system..."
+	echo -e "\e[32m[*] \e[34mMoving JDK to system..."
 	mv jdk8_${archname}.tar.gz $PREFIX/share
-	ee "\e[32m[*] \e[34mExtracting JDK..."
+	echo -e "\e[32m[*] \e[34mExtracting JDK..."
 	cd $PREFIX/share
 	tar -xhf jdk8_${archname}.tar.gz
-	ee "\e[32m[*] \e[34mMoving Java wrapper scripts to bin..."
+	echo -e "\e[32m[*] \e[34mMoving Java wrapper scripts to bin..."
 	mv bin/* $PREFIX/bin
-	ee "\e[32m[*] \e[34mCleaning up temporary files..."
+	echo -e "\e[32m[*] \e[34mCleaning up temporary files..."
 	rm -rf $PREFIX/share/jdk8_${archname}.tar.gz
 	rm -rf $PREFIX/share/bin
 	echo
-	ee "\e[32mJava was successfully installed!\e[39m"
-	sleep 3
+	echo -e "\e[32mJava was successfully installed!\e[39m"
+	slecho -ep 3
 	echo
 
 ####################
@@ -239,7 +240,7 @@ echo "Installing java"
 ####################
 echo "Installing apktool"
 echo ""
-	echo "Take a screenshot if you find any error"
+	echo "Take a screcho -enshot if you find any error"
 	echo ""
 	echo "Press enter to continue"
 	read garbage
@@ -249,23 +250,23 @@ ln -s .files/apktool $PREFIX/bin/apktool
 ln -s .files/apktool.jar $PREFIX/bin/apktool.jar
 chmod +x $PREFIX/bin/apktool*
 chmod +x $PREFIX/bin/aapt
-ee "\e[32mApktool was successfully installed!\e[39m"
-sleep 5
+echo -e "\e[32mApktool was successfully installed!\e[39m"
+slecho -ep 5
 
 ######################
 ## Zipalign Install ##
 ######################
 echo "Installing  zipalign"
 echo ""
-	echo "Take a screenshot if you find any error"
+	echo "Take a screcho -enshot if you find any error"
 	echo ""
 	echo "Press enter to continue"
 	read garbage
 	clear
 ln -s .files/zipalign $PREFIX/bin/zipalign
 chmod +x $PREFIX/bin/zipalign
-ee "\e[32mZipalign was successfully installed!\e[39m"
-sleep 5
+echo -e "\e[32mZipalign was successfully installed!\e[39m"
+slecho -ep 5
 clear
 echo "Force Install was runned"
 else
