@@ -4,10 +4,10 @@ clear
 git checkout origin/master *
 cd $HOME/T-Load
 echo -e "$rd $bwt Searching for updates. Please wait :)$rt"
-touch $HOME/.msf_default/updates
-rm $HOME/.msf_default/updates
-git fetch --dry-run 2>&1 > /dev/null| tee $HOME/.msf_default/updates
-up=$HOME/.msf_default/updates
+touch $HOME/skstool_data/updates
+rm $HOME/skstool_data/updates
+git fetch --dry-run 2>&1 > /dev/null| tee $HOME/skstool_data/updates
+up=$HOME/skstool_data/updates
 if grep -q origin/master "$up"; then
 clear
 echo -e "$bl $bwt Updates are found. Now updating$rt"
