@@ -177,6 +177,7 @@ fi
 if [ "$OS" == "1" ]
 then
 echo -e "\e[1;32m Openssh is installed \e[0m"
+sleep 1
 else
 echo "Installing openssh"
 sleep 2
@@ -185,6 +186,7 @@ fi
 if [ "$SP" == "1" ]
 then
 echo -e "\e[1;32m Sshpass is installed \e[0m"
+sleep 1
 else
 echo "Installing sshpass"
 sleep 2
@@ -193,6 +195,7 @@ fi
 if [ "$CU" == "1" ]
 then
 echo -e "\e[1;32m Curl is installed \e[0m"
+sleep 1
 else
 echo "Installing Curl"
 sleep 2
@@ -201,6 +204,7 @@ fi
 if [ "$RS" == "1" ]
 then
 echo -e "\e[1;32m Rsync is installed \e[0m"
+sleep 1
 else
 echo "Installing Rsync"
 sleep 2
@@ -209,6 +213,7 @@ fi
 if [ "$EX" == "1" ]
 then
 echo -e "\e[1;32m Expect is installed \e[0m"
+sleep 1
 else
 echo "Installing Expect"
 sleep 2
@@ -217,6 +222,7 @@ fi
 if [ "$NA" == "1" ]
 then
 echo -e "\e[1;32m Nano is installed \e[0m"
+sleep 1
 else
 echo "Installing Nano"
 sleep 2
@@ -250,11 +256,11 @@ chmod 600 key
 ######################################
 ## Symlink test for executable file ##
 ######################################
-if [ -e $PREFIX/bin/skstool ]
+if [ ! -e $PREFIX/bin/skstool ]
 then
-rm $PREFIX/bin/skstool
-fi
 ln -s skstool $PREFIX/bin/skstool
+fi
+
 
 ######################
 ## End of autosetup ##
@@ -378,6 +384,7 @@ ln -s $HOME/T-Load/skstool $PREFIX/bin/skstool
 fi
 
 echo -e "\e[107m \e[1;34m Force setup was ran \e[0m"
+sleep 1
 echo "If you faced any errors, then please take a screen shot and post it in my forums along with log"
 echo ""
 echo "Press enter to exit"
