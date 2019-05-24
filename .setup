@@ -6,12 +6,12 @@ source $HOME/T-Load/.clr
 ###################
 
 ## Backup default apk.rb and copy custom apk.rb
-if [ -e $HOME/metasploit-framework/lib/msf/core/payload/apk.rb ]
+if [ -f $HOME/metasploit-framework/lib/msf/core/payload/apk.rb ]
 then
 mv $HOME/metasploit-framework/lib/msf/core/payload/apk.rb $HOME/metasploit-framework/lib/msf/core/payload/apk.rb.default.back
 cp $HOME/T-Load/.files/apk.rb $HOME/metasploit-framework/lib/msf/core/payload/apk.rb
 fi
-if [ -e $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb ]
+if [ -f $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb ]
 then
 mv $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb.default.back
 cp $HOME/T-Load/.files/apk.rb $PREFIX/opt/metasploit-framework/lib/msf/core/payload/apk.rb
@@ -20,7 +20,7 @@ fi
 ###########################
 ## Remove existing tload ##
 ###########################
-if [ -e $PREFIX/bin/tload ]
+if [ -f $PREFIX/bin/tload ]
 then
 rm $PREFIX/bin/tload
 fi
@@ -28,7 +28,7 @@ fi
 ###############################
 ## Remove  tload from T-Load ##
 ###############################
-if [ -e $HOME/tload ]
+if [ -f $HOME/tload ]
 then
 echo -e "$rd You cannot launch T-Load by typing tload"
 echo -e "$rd The new shortcut for quick launch is skstool"
@@ -53,7 +53,7 @@ echo -e "$bwt $bl Checking for dependecies $rt"
 ## Install Java ##
 ##################
 
-if [ -e $PREFIX/bin/java ]
+if [ -f $PREFIX/bin/java ]
 then
 echo -e "\e[1;32m Apktool is installed \e[0m"
 else
@@ -251,10 +251,13 @@ chmod +x *
 chmod 600 pfskey
 chmod 600 key
 
-########################################
-## Set permission for executable file ##
-########################################
-cp $HOME/T-Load/skstool $PREFIX/bin/skstool
+#################################
+## Symlink for executable file ##
+#################################
+if [ -e $PREFIX/bin/skstool ]
+then
+rm $PREFIX/bin/skstool
+ln -s $HOME/T-Load/skstool $PREFIX/bin/skstool
 chmod +x $PREFIX/bin/skstool
 
 ######################
@@ -327,15 +330,15 @@ echo "Installing java"
 ###########################
 ## Force install Apktool ##
 ###########################
-if [ -e $PREFIX/bin/apktool ]
+if [ -f $PREFIX/bin/apktool ]
 then
 rm $PREFIX/bin/apktool
 fi
-if [ -e $PREFIX/bin/apktool.jar ]
+if [ -f $PREFIX/bin/apktool.jar ]
 then
 rm $PREFIX/bin/apktool.jar
 fi
-if [ -e $PREFIX/bin/aapt ]
+if [ -f $PREFIX/bin/aapt ]
 then
 rm $PREFIX/bin/aapt
 fi
@@ -357,7 +360,7 @@ sleep 5
 ############################
 ## Force install zipalign ##
 ############################
-if [ -e $PREFIX/bin/zipalign ]
+if [ -f $PREFIX/bin/zipalign ]
 then
 rm $PREFIX/bin/zipalign
 fi
@@ -376,7 +379,7 @@ sleep 5
 ##########################
 ## Force resest skstool ##
 ##########################
-if [ -e $PREFIX/bin/skstool ]
+if [ -f $PREFIX/bin/skstool ]
 then
 rm $PREFIX/bin/skstool
 ln -s $HOME/T-Load/skstool $PREFIX/bin/skstool
