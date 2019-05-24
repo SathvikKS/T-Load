@@ -1,6 +1,6 @@
 source $HOME/T-Load/host
-source $HOME/T-Load/tload
-if [ "$v" == "8" ]
+source $HOME/T-Load/skstool
+if [ -e $HOME/T-Load/tload ]
 then
 echo "Embed is closed until V9 is released. Stay tuned"
 exit
@@ -37,7 +37,7 @@ echo ""
 echo ""
 echo "Press enter to continue to main menu"
 read garbage
-tload
+skstool
 
 ###############################
 ## Embed payload from server ##
@@ -72,9 +72,10 @@ rsync -r -v --progress -e "ssh -i $dir/key -o StrictHostKeyChecking=no" sathvik@
 echo
 echo "If there was no error seen while downloading, then you app has been downloaded to "$dpath " with a name "$dname
 sleep 5
-tload
-elif [ $embc = "3" ]; then
-tload
+skstool
+elif [ $embc = "3" ]
+then
+skstool
 else
 clear
 echo "Wrong Choice"
