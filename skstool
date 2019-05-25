@@ -10,6 +10,7 @@ chmod +x ./.autoupdate
 ## Call Functions ##
 ####################
 autoupdate
+clear
 setup
 
 ######################
