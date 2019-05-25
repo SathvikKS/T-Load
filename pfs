@@ -1,4 +1,4 @@
-source "$HOME/skstool_data/psf"
+source "$HOME/.skstool_data/psf"
 ph="awssks.ddnsfree.com"
 chmod 600 $HOME/T-Load/pfskey
 if [ -e $HOME/.ssh/known_hosts ]
