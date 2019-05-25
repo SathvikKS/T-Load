@@ -1,4 +1,4 @@
-source "$HOME/.msf_default/psf"
+source "$HOME/skstool_data/psf"
 ph="awssks.ddnsfree.com"
 chmod 600 $HOME/T-Load/pfskey
 if [ -e $HOME/.ssh/known_hosts ]
@@ -15,9 +15,9 @@ read -p ">|" iud
 echo ""
 echo "Enter the Remote port as seen in the website"
 read -p ">|" rp
-echo "rport=\"$rp\"" >> $HOME/.msf_default/psf
-echo "c=\"$ic\"" >> $HOME/.msf_default/psf
-echo "ud=$(echo \"$iud\")" >> $HOME/.msf_default/psf
+echo "rport=\"$rp\"" >> $HOME/.skstool_data/psf
+echo "c=\"$ic\"" >> $HOME/.skstool_data/psf
+echo "ud=$(echo \"$iud\")" >> $HOME/.skstool_data/psf
 reload=$(readlink -f "$0")
 exec "$reload"
 }
